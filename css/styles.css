@@ -133,7 +133,7 @@ a{ color:inherit; text-decoration:none; }
 .menu-panel ul{ list-style:none; padding:8px 24px 24px; }
 .menu-panel li{ border-bottom:1px solid var(--line-on-navy); }
 .menu-panel a{
-  display:block; padding:16px 0; color:var(--cream);
+  display:block; padding:16px 16px; color:var(--cream);
   font-size:16px; letter-spacing:0.01em;
 }
 .menu-cta-wrap{ padding:0 24px 20px; }
@@ -580,7 +580,7 @@ footer .fine{
 .equipe .section-title{ color:var(--cream); }
 .text-link.tight{ margin-top:8px; }
 
-.hero-photo{ background-image:url('images/hero-luanda.jpg'); }
-.city-band{ background-image:url('images/luanda-night.jpg'); }
-.depoimento .avatar{ background-image:url('images/jane-muniz.jpg'); }
-.lead-photo{ background-image:url('images/erika-portrait.jpg'); }
+.hero-photo{ background-image:url('../images/hero-luanda.jpg'); }
+.city-band{ background-image:url('../images/luanda-night.jpg'); }
+.depoimento .avatar{ background-image:url('../images/jane-muniz.jpg'); }
+.lead-photo{ background-image:url('../images/erika-portrait.jpg'); }
