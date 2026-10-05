@@ -13,11 +13,6 @@
   background:var(--navy);
   padding:48px 0 40px;
 }
-.ct-hero .crumb{
-  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
-  margin-bottom:22px; display:block;
-}
-.ct-hero .crumb a{ color:rgba(250,243,231,.8); }
 .ct-hero h1{ font-size:46px; line-height:1.04; color:var(--cream); }
 .ct-hero-lead{
   margin-top:20px; max-width:520px;
@@ -76,31 +71,15 @@
   font-size:11px; letter-spacing:.14em; text-transform:uppercase;
   color:var(--ink-soft); font-weight:500;
 }
-.ct-list a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; }
-.ct-list a:hover{ text-decoration-color:var(--terracotta); }
-.ct-list .ic{
-  width:34px; height:34px; flex-shrink:0;
-  background:var(--terracotta);
-  border-radius:50%;
-  display:flex; align-items:center; justify-content:center;
-  color:var(--cream);
-}
-.ct-list .ic svg{
-  width:17px; height:17px; display:block;
-  fill:none; stroke:currentColor; stroke-width:1.8;
-  stroke-linecap:round; stroke-linejoin:round;
-}
+/* .ic, .ic svg e .contact-link estão em styles.css: são partilhados com a
+   secção "Vamos conversar" da home. */
 
 .ct-note{
   margin-top:36px; padding:24px;
   background:var(--blush); border-radius:16px;
 }
 .ct-note p{ color:var(--ink); font-size:14.5px; }
-.text-link-inline{
-  color:var(--navy); font-weight:500;
-  text-decoration:underline; text-decoration-color:var(--terracotta);
-  text-underline-offset:3px;
-}
+/* .text-link-inline está em styles.css (serve a home e esta página) */
 
 /* =========================================================
    TABLET (≥768px)

@@ -16,11 +16,8 @@
   background:var(--navy);
   padding:48px 0 40px;
 }
-.sol-hero .crumb{
-  font-size:12px; letter-spacing:.1em; color:rgba(250,243,231,.6);
-  margin-bottom:22px; display:block; line-height:1.7;
-}
-.sol-hero .crumb a{ color:rgba(250,243,231,.8); }
+/* migalha de 2 níveis: respira mais que a das outras páginas */
+.sol-hero .crumb{ letter-spacing:.1em; line-height:1.7; }
 .sol-hero .kicker{ color:var(--terracotta-soft); }
 .sol-hero h1{
   font-size:38px; line-height:1.08; color:var(--cream); max-width:14ch;
@@ -93,7 +90,16 @@
   flex:0 0 auto;
 }
 .sol-others .name{ font-family:'Cormorant Garamond', serif; font-size:21px; line-height:1.2; }
-.sol-others .arrow{ margin-left:auto; color:var(--terracotta-soft); }
+.sol-others .arrow{ margin-left:auto; color:var(--terracotta-soft); transition:transform .18s ease; }
+
+@media (hover: hover){
+  .sol-others a:hover .name{ color:var(--terracotta-soft); }
+  .sol-others a:hover .arrow{ transform:translateX(4px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .sol-others .arrow{ transition:none; }
+  .sol-others a:hover .arrow{ transform:none; }
+}
 
 /* ---------- CTA final ---------- */
 .sol-cta{ text-align:left; }

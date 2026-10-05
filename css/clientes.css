@@ -19,11 +19,6 @@
   background:var(--navy);
   padding:48px 0 40px;
 }
-.cl-hero .crumb{
-  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
-  margin-bottom:22px; display:block;
-}
-.cl-hero .crumb a{ color:rgba(250,243,231,.8); }
 .cl-hero h1{ font-size:46px; line-height:1.04; color:var(--cream); }
 .cl-hero-lead{
   margin-top:20px; max-width:560px;
@@ -54,14 +49,19 @@
   grid-template-columns:repeat(2, 1fr);
   gap:12px;
 }
+/* mesma solução da home: ver a nota em styles.css, em .logo-cell */
 .cl-logo{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
   aspect-ratio:1.5;
   display:flex; align-items:center; justify-content:center;
 }
-.cl-logo img{ max-width:56%; max-height:100%; object-fit:contain; }
+.cl-logo img{
+  max-width:56%; max-height:100%;
+  object-fit:contain;
+  mix-blend-mode:darken;
+}
+@supports not (mix-blend-mode: darken){
+  .cl-logo{ background:#FFFBF7; border-radius:8px; }
+}
 
 .cl-more-title{
   margin-top:44px;

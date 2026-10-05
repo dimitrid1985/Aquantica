@@ -16,11 +16,6 @@
   background:var(--navy);
   padding:48px 0 36px;
 }
-.of-hero .crumb{
-  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
-  margin-bottom:22px; display:block;
-}
-.of-hero .crumb a{ color:rgba(250,243,231,.8); }
 .of-hero h1{
   font-size:46px; line-height:1.04; color:var(--cream);
 }
@@ -48,6 +43,13 @@
   color:var(--cream);
   font-size:13.5px; letter-spacing:.02em;
 }
+@media (hover: hover){
+  .of-anchors a:hover{
+    background:rgba(250,243,231,0.08);
+    border-color:rgba(250,243,231,0.5);
+  }
+}
+
 .of-anchors .n{
   font-family:'Cormorant Garamond', serif;
   font-size:12px; letter-spacing:.08em; color:var(--terracotta-soft);
@@ -79,7 +81,14 @@
   padding:11px 16px;
   cursor:pointer;
 }
-.of-filtro-botoes button:hover{ border-color:var(--terracotta); }
+@media (hover: hover){
+  .of-filtro-botoes button:hover{ border-color:var(--terracotta); }
+  /* o botão activo já está preenchido: escurece, como os outros preenchidos */
+  .of-filtro-botoes button[aria-pressed="true"]:hover{
+    background:var(--navy-2);
+    border-color:var(--navy-2);
+  }
+}
 .of-filtro-botoes button:focus-visible{
   outline:2px solid var(--terracotta); outline-offset:2px;
 }

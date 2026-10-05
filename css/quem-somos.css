@@ -23,11 +23,6 @@
   background:var(--navy);
   padding:48px 0 36px;
 }
-.qs-hero .crumb{
-  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
-  margin-bottom:22px; display:block;
-}
-.qs-hero .crumb a{ color:rgba(250,243,231,.8); }
 .qs-hero h1{
   font-size:46px; line-height:1.04; color:var(--cream);
 }
@@ -43,6 +38,13 @@
   color:var(--cream);
   font-size:13.5px; letter-spacing:.02em;
 }
+@media (hover: hover){
+  .qs-anchors a:hover{
+    background:rgba(250,243,231,0.08);
+    border-color:rgba(250,243,231,0.5);
+  }
+}
+
 
 /* ---------- introdução ---------- */
 .qs-intro{ display:grid; gap:40px; }

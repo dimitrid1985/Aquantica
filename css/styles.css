@@ -69,6 +69,13 @@ a{ color:inherit; text-decoration:none; }
   margin:18px 0 20px;
 }
 
+/* migalha dos heros das páginas internas (era repetida nos 5 CSS de página) */
+.crumb{
+  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
+  margin-bottom:22px; display:block;
+}
+.crumb a{ color:rgba(250,243,231,.8); }
+
 .btn{
   display:inline-flex;
   align-items:center;
@@ -91,9 +98,16 @@ a{ color:inherit; text-decoration:none; }
   font-size:13.5px; font-weight:500; letter-spacing:0.01em;
   margin-top:16px;
 }
+/* link dentro de uma frase corrida, sem seta */
+.text-link-inline{
+  color:var(--navy); font-weight:500;
+  text-decoration:underline; text-decoration-color:var(--terracotta);
+  text-underline-offset:3px;
+}
+
 .text-link.on-cream{ color:var(--navy); }
 .text-link.on-navy{ color:var(--cream); }
-.text-link .arrow{ color:var(--terracotta); transition:transform 0.15s; }
+.text-link .arrow{ color:var(--terracotta); }
 
 /* ---------- NAV ---------- */
 .nav{
@@ -120,6 +134,7 @@ a{ color:inherit; text-decoration:none; }
 .burger i{
   display:block; height:1.5px; width:100%; background:var(--cream);
   position:absolute; left:0;
+  transition:background-color .18s ease;
 }
 .burger i:nth-child(1){ top:0; }
 .burger i:nth-child(2){ top:8px; }
@@ -161,11 +176,78 @@ a{ color:inherit; text-decoration:none; }
 /* compensa o nav fixo ao saltar para uma âncora */
 [id]{ scroll-margin-top:76px; }
 
-/* foco visível sobre o azul-marinho do nav */
-.nav a:focus-visible,
-.burger:focus-visible{
+/* =========================================================
+   ESTADOS: HOVER E FOCO
+   Um só sistema para todo o site. A lógica é a mesma em todo o lado:
+
+   · sobre fundo creme, o elemento escurece para terracota
+   · sobre fundo azul-marinho, clareia para o terracota suave
+   · botão preenchido escurece; botão de contorno preenche-se
+   · seta avança 4 px
+
+   Os :hover vivem dentro de @media (hover:hover) para não ficarem
+   "colados" depois de um toque em ecrã táctil. O foco fica de fora,
+   para quem navega por teclado receber sempre o mesmo destaque.
+========================================================= */
+
+a, .btn, button{
+  transition:color .18s ease, background-color .18s ease,
+             border-color .18s ease, opacity .18s ease;
+}
+.text-link .arrow{ transition:transform .18s ease; }
+
+:focus-visible{
   outline:2px solid var(--terracotta);
-  outline-offset:4px;
+  outline-offset:3px;
+}
+
+@media (hover: hover){
+  /* ----- botões ----- */
+  .btn-primary:hover{ background:var(--terracotta-dark); }
+  .btn-outline-light:hover{
+    background:rgba(250,243,231,0.10);
+    border-color:rgba(250,243,231,0.55);
+  }
+  .btn-outline-dark:hover{
+    background:var(--navy);
+    border-color:var(--navy);
+    color:var(--cream);
+  }
+
+  /* ----- links com seta ----- */
+  .text-link.on-cream:hover{ color:var(--terracotta-dark); }
+  .text-link.on-navy:hover{ color:var(--terracotta-soft); }
+  .text-link:hover .arrow{ transform:translateX(4px); }
+
+  /* ----- link dentro de frase corrida ----- */
+  .text-link-inline:hover{
+    color:var(--terracotta-dark);
+    text-decoration-thickness:2px;
+  }
+
+  /* ----- nav ----- */
+  .menu-panel a:hover{ color:var(--terracotta-soft); }
+  /* o CTA do menu é um .btn: herda o hover de .btn-outline-light e
+     mantém o texto creme, em vez de apanhar o terracota do nav */
+  .menu-panel .menu-cta:hover{ color:var(--cream); }
+  .nav .word-mark:hover{ opacity:.8; }
+  .burger:hover i{ background:var(--terracotta-soft); }
+
+  /* ----- migalha e rodapé (texto esbatido que recupera o creme) ----- */
+  .crumb a:hover{ color:var(--cream); }
+  footer a:hover{ color:var(--cream); }
+
+  /* ----- dados de contacto ----- */
+  .contact-link:hover{
+    color:var(--terracotta-dark);
+    text-decoration-color:var(--terracotta);
+  }
+}
+
+/* movimento discreto é opcional: quem pediu menos animação não leva nenhuma */
+@media (prefers-reduced-motion: reduce){
+  a, .btn, button, .text-link .arrow{ transition:none; }
+  .text-link:hover .arrow{ transform:none; }
 }
 
 /* ---------- HERO ---------- */
@@ -255,6 +337,10 @@ a{ color:inherit; text-decoration:none; }
   background:#fff;
   padding:26px 22px;
   position:relative;
+  /* coluna, para o "Ver serviços" assentar no fundo mesmo quando os
+     pilares têm números diferentes de serviços (5, 2 e 2) */
+  display:flex;
+  flex-direction:column;
 }
 .pillar .num{
   font-family:'Cormorant Garamond', serif;
@@ -272,7 +358,23 @@ a{ color:inherit; text-decoration:none; }
   font-weight:500;
   margin-bottom:12px;
 }
-.pillar p{ font-size:14.5px; }
+/* índice dos serviços: é o que torna a home procurável pelo nome do serviço */
+.pillar-servicos{
+  list-style:none;
+  margin-top:16px;
+  border-bottom:1px solid var(--line);
+}
+.pillar-servicos li{
+  font-family:'Cormorant Garamond', serif;
+  font-size:16.5px;
+  line-height:1.3;
+  color:var(--navy);
+  padding:9px 0;
+  border-top:1px solid var(--line);
+}
+.pillar .text-link{ margin-top:auto; padding-top:18px; }
+
+.solucoes-atalhos{ margin-top:10px; font-size:14px; }
 
 /* ---------- CLIENTES ---------- */
 .clientes{
@@ -285,16 +387,24 @@ a{ color:inherit; text-decoration:none; }
   grid-template-columns:repeat(2, 1fr);
   gap:12px;
 }
+/* Os PNG dos logos vêm com fundo opaco #FFFBF7 (o fundo claro da
+   apresentação) e não há versões transparentes. Em vez de os emoldurar,
+   a célula fica sem fundo e a imagem funde-se com `darken`: como
+   darken(#FFFBF7, #FAF3E7) dá exactamente #FAF3E7, o quadrado do ficheiro
+   passa a ser o creme da secção e desaparece. A célula continua a existir
+   só para a grelha. Exige que o fundo por trás seja --cream. */
 .logo-cell{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:8px;
   aspect-ratio:1.5;
   display:flex; align-items:center; justify-content:center;
 }
 .logo-cell img{
   max-width:50%; max-height:100%;
   object-fit:contain;
+  mix-blend-mode:darken;
+}
+/* sem suporte para blend, devolve-se a moldura, agora na cor do ficheiro */
+@supports not (mix-blend-mode: darken){
+  .logo-cell{ background:#FFFBF7; border-radius:8px; }
 }
 
 /* ---------- DEPOIMENTOS ---------- */
@@ -422,7 +532,12 @@ a{ color:inherit; text-decoration:none; }
   color:var(--ink);
 }
 .contact-row:last-child{ border-bottom:1px solid var(--line); }
-.contact-row .ic{
+
+/* ---------- DADOS DE CONTACTO (home e /fale-connosco) ---------- */
+/* O ícone e o link são os mesmos nas duas páginas, por isso vivem aqui.
+   A home usa .contact-row, o Fale connosco usa .ct-list — só a moldura
+   difere; o miolo é partilhado. */
+.ic{
   width:34px; height:34px;
   background:var(--terracotta);
   border-radius:50%;
@@ -430,7 +545,14 @@ a{ color:inherit; text-decoration:none; }
   color:var(--cream);
   flex-shrink:0;
 }
-.contact-row .ic svg{
+.contact-link{
+  color:var(--ink);
+  text-decoration:underline;
+  text-decoration-color:var(--line);
+  text-underline-offset:3px;
+}
+
+.ic svg{
   width:17px; height:17px;
   display:block;
   fill:none;
@@ -525,6 +647,23 @@ footer .fine{
     margin-top:30px;
   }
   .pillar{ margin-top:0; }
+
+  /* Os títulos dos pilares têm alturas diferentes (um cabe numa linha, dois
+     não), o que desalinhava as listas de serviços entre cartões. Com subgrid,
+     número, título, verbos, lista e link partilham as linhas da grelha-mãe.
+     Sem suporte, o layout flex acima mantém-se — só sem esse alinhamento. */
+  @supports (grid-template-rows: subgrid){
+    .pillar-grid{ grid-template-rows:auto auto auto 1fr auto; }
+    .pillar{
+      display:grid;
+      grid-row:span 5;
+      grid-template-rows:subgrid;
+    }
+    /* sem isto a lista estica até ao fundo da linha e a sua borda de fecho
+       fica a flutuar longe do último serviço, nos pilares com menos itens */
+    .pillar-servicos{ align-self:start; }
+    .pillar .text-link{ margin-top:0; }
+  }
 
   .logo-grid{ grid-template-columns:repeat(3, 1fr); }
 

@@ -7,6 +7,9 @@
 
    Sem JavaScript a barra fica escondida (ver .of-filtro no CSS) e a
    página mostra os 9 serviços, como antes.
+
+   O estado fica no URL: /o-que-fazemos?momento=novo — assim pode ser
+   partilhado, guardado nos favoritos ou linkado de outra página.
 ========================================================= */
 (function () {
   const barra = document.querySelector('[data-filtro]');
@@ -14,9 +17,37 @@
 
   document.documentElement.classList.add('tem-js');
 
+  const PARAM = 'momento';
+  const VALIDOS = ['todos', 'novo', 'funcionamento'];
+
   const botoes = Array.prototype.slice.call(barra.querySelectorAll('button[data-momento]'));
   const aviso = barra.querySelector('[data-filtro-aviso]');
   const listas = Array.prototype.slice.call(document.querySelectorAll('.of-services'));
+
+  /* lê o momento do URL; qualquer valor desconhecido cai em "todos" */
+  function momentoDoURL() {
+    let valor = null;
+    try {
+      valor = new URLSearchParams(location.search).get(PARAM);
+    } catch (e) {
+      return 'todos';
+    }
+    return VALIDOS.indexOf(valor) !== -1 ? valor : 'todos';
+  }
+
+  /* escreve com replaceState: o URL fica partilhável sem encher o histórico
+     de entradas a cada clique — o Voltar sai da página, como se espera.
+     "todos" não põe parâmetro nenhum, para o URL ficar limpo. */
+  function guardarNoURL(momento) {
+    try {
+      const url = new URL(location.href);
+      if (momento === 'todos') url.searchParams.delete(PARAM);
+      else url.searchParams.set(PARAM, momento);
+      history.replaceState(null, '', url);
+    } catch (e) {
+      /* file:// ou browser sem History API: o filtro continua a funcionar */
+    }
+  }
 
   /* desliga a regra CSS que faz o último item ocupar a linha toda:
      com filtro, quem é o último muda, e passa a ser o JS a decidir */
@@ -67,8 +98,13 @@
   botoes.forEach(function (b) {
     b.addEventListener('click', function () {
       aplicar(b.dataset.momento);
+      guardarNoURL(b.dataset.momento);
     });
   });
 
-  aplicar('todos');
+  /* arranque: respeita o que vier no URL. Também escreve, para normalizar
+     um valor inválido ou um ?momento=todos deixado à mão. */
+  const inicial = momentoDoURL();
+  aplicar(inicial);
+  guardarNoURL(inicial);
 })();
