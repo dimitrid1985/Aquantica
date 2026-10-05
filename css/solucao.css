@@ -1,0 +1,169 @@
+/* =========================================================
+   PÁGINAS DE SOLUÇÃO (as 3 filhas de /o-que-fazemos)
+   Prefixo sol-. Um único ficheiro para as três, porque partilham
+   exactamente o mesmo molde — só muda o conteúdo.
+   Depende de css/styles.css (variáveis, tipografia, nav, botões, footer)
+========================================================= */
+
+/* ---------- estrutura base ---------- */
+.sol-wrap{ padding:0 24px; }
+.sol-sec{ padding:56px 0; }
+.sol-sec--cream{ background:var(--cream); }
+.sol-sec--cream2{ background:var(--cream-2); }
+
+/* ---------- hero ---------- */
+.sol-hero{
+  background:var(--navy);
+  padding:48px 0 40px;
+}
+.sol-hero .crumb{
+  font-size:12px; letter-spacing:.1em; color:rgba(250,243,231,.6);
+  margin-bottom:22px; display:block; line-height:1.7;
+}
+.sol-hero .crumb a{ color:rgba(250,243,231,.8); }
+.sol-hero .kicker{ color:var(--terracotta-soft); }
+.sol-hero h1{
+  font-size:38px; line-height:1.08; color:var(--cream); max-width:14ch;
+}
+.sol-verbs{
+  margin-top:16px;
+  font-size:12.5px; letter-spacing:.05em; font-weight:500;
+  color:var(--terracotta-soft);
+}
+.sol-hero-lead{
+  margin-top:22px; max-width:620px;
+  color:rgba(250,243,231,.74); font-size:15.5px;
+}
+
+/* ---------- lista de serviços ---------- */
+.sol-service{
+  padding-top:40px;
+  border-top:1px solid var(--line);
+}
+.sol-service:first-child{ border-top:none; padding-top:0; }
+.sol-service + .sol-service{ margin-top:48px; }
+
+.sol-service figure{ margin:0 0 24px; }
+.sol-service figure img{
+  display:block; width:100%;
+  aspect-ratio:3/2; object-fit:cover; border-radius:16px;
+}
+.sol-service .n{
+  font-family:'Cormorant Garamond', serif;
+  font-size:15px; letter-spacing:.08em; color:var(--terracotta-dark);
+  display:block; margin-bottom:8px;
+}
+.sol-service h2{ font-size:27px; line-height:1.14; }
+.sol-service .apply{
+  display:inline-block; margin-top:12px;
+  padding:5px 11px;
+  border:1px solid var(--line);
+  border-radius:2px;
+  font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--terracotta-dark); font-weight:500;
+}
+
+.sol-detail{ margin-top:24px; }
+.sol-detail > div{
+  padding-top:16px; border-top:1px solid var(--line);
+  margin-bottom:20px;
+}
+.sol-detail > div:last-child{ margin-bottom:0; }
+.sol-detail dt{
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft); font-weight:500;
+}
+.sol-detail dd{ margin:8px 0 0; }
+.sol-detail dd p{ font-size:15px; max-width:620px; }
+
+/* ---------- outras soluções ---------- */
+.sol-others{ background:var(--navy); color:var(--cream); padding:52px 0; }
+.sol-others .kicker{ color:var(--terracotta-soft); }
+.sol-others h2{ color:var(--cream); font-size:26px; }
+.sol-others ul{ list-style:none; margin-top:26px; }
+.sol-others li{ border-top:1px solid var(--line-on-navy); }
+.sol-others li:last-child{ border-bottom:1px solid var(--line-on-navy); }
+.sol-others a{
+  display:flex; align-items:baseline; gap:14px;
+  padding:20px 0; color:var(--cream);
+}
+.sol-others .n{
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px; letter-spacing:.08em; color:var(--terracotta-soft);
+  flex:0 0 auto;
+}
+.sol-others .name{ font-family:'Cormorant Garamond', serif; font-size:21px; line-height:1.2; }
+.sol-others .arrow{ margin-left:auto; color:var(--terracotta-soft); }
+
+/* ---------- CTA final ---------- */
+.sol-cta{ text-align:left; }
+.sol-cta h2{ font-size:30px; max-width:520px; }
+.sol-cta .btn{ margin-top:26px; }
+
+/* =========================================================
+   TABLET (≥768px)
+========================================================= */
+@media (min-width:768px){
+  .sol-wrap{ padding:0 40px; }
+  .sol-sec{ padding:72px 0; }
+
+  .sol-hero{ padding:64px 0 48px; }
+  .sol-hero h1{ font-size:52px; }
+  .sol-hero-lead{ font-size:17px; }
+
+  .sol-service{ padding-top:48px; }
+  .sol-service + .sol-service{ margin-top:56px; }
+  .sol-service figure img{ aspect-ratio:16/9; }
+
+  .sol-service h2{ font-size:32px; }
+  .sol-detail{ display:grid; grid-template-columns:1fr 1fr; column-gap:48px; align-items:start; }
+  .sol-detail > div{ margin-bottom:0; }
+
+  .sol-others{ padding:72px 0; }
+  /* lado a lado: ambos os itens fecham com linha, senão fica assimétrico */
+  .sol-others ul{ display:grid; grid-template-columns:1fr 1fr; column-gap:40px; }
+  .sol-others li,
+  .sol-others li:last-child{ border-bottom:1px solid var(--line-on-navy); }
+
+  .sol-cta h2{ font-size:36px; }
+}
+
+/* =========================================================
+   DESKTOP (≥1024px)
+========================================================= */
+@media (min-width:1024px){
+  .sol-wrap{ max-width:1160px; margin:0 auto; padding:0 56px; }
+  .sol-sec{ padding:96px 0; }
+
+  .sol-hero{ padding:84px 0 64px; }
+  .sol-hero h1{ font-size:64px; }
+
+  /* foto de um lado, texto do outro; alterna a cada serviço */
+  .sol-service{
+    display:grid; grid-template-columns:.85fr 1.15fr;
+    /* a 1.ª linha fica do tamanho do cabeçalho; a 2.ª absorve o resto da
+       altura da foto, para o detalhe não ficar a flutuar a meio */
+    grid-template-rows:auto 1fr;
+    column-gap:64px; align-items:start;
+    padding-top:64px;
+  }
+  .sol-service + .sol-service{ margin-top:72px; }
+  .sol-service figure{ margin:0; grid-column:1; grid-row:1 / span 2; }
+  .sol-service figure img{ aspect-ratio:4/5; }
+  .sol-service .sol-head{ grid-column:2; }
+  .sol-service .sol-detail{ grid-column:2; margin-top:28px; }
+
+  .sol-service:nth-child(even) figure{ grid-column:2; }
+  .sol-service:nth-child(even) .sol-head,
+  .sol-service:nth-child(even) .sol-detail{ grid-column:1; }
+
+  .sol-service h2{ font-size:36px; }
+  .sol-detail dd p{ font-size:15.5px; }
+
+  .sol-others{ padding:96px 0; }
+  .sol-others h2{ font-size:30px; }
+  .sol-others .name{ font-size:23px; }
+
+  .sol-cta .sol-wrap{ display:flex; justify-content:space-between; align-items:center; gap:64px; }
+  .sol-cta .btn{ margin-top:0; flex:0 0 auto; }
+}

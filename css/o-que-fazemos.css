@@ -1,0 +1,176 @@
+/* =========================================================
+   O QUE FAZEMOS — estilos específicos da página
+   Depende de css/styles.css (variáveis, tipografia, nav, botões, footer)
+========================================================= */
+
+/* ---------- estrutura base ---------- */
+.of-wrap{ padding:0 24px; }
+.of-sec{ padding:56px 0; }
+.of-sec--cream{ background:var(--cream); }
+.of-sec--cream2{ background:var(--cream-2); }
+
+.of-h2{ font-size:30px; line-height:1.14; }
+
+/* ---------- hero ---------- */
+.of-hero{
+  background:var(--navy);
+  padding:48px 0 36px;
+}
+.of-hero .crumb{
+  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
+  margin-bottom:22px; display:block;
+}
+.of-hero .crumb a{ color:rgba(250,243,231,.8); }
+.of-hero h1{
+  font-size:46px; line-height:1.04; color:var(--cream);
+}
+.of-hero-lead{
+  margin-top:20px; max-width:520px;
+  color:rgba(250,243,231,.72); font-size:15.5px;
+}
+
+.of-anchors{
+  display:flex; gap:10px; margin-top:34px;
+  overflow-x:auto; scrollbar-width:none; padding-bottom:2px;
+}
+.of-anchors::-webkit-scrollbar{ display:none; }
+.of-anchors a{
+  flex:0 0 auto;
+  display:flex; align-items:baseline; gap:8px;
+  padding:12px 14px;
+  border:1px solid var(--line-on-navy);
+  color:var(--cream);
+  font-size:13.5px; letter-spacing:.02em;
+}
+.of-anchors .n{
+  font-family:'Cormorant Garamond', serif;
+  font-size:12px; letter-spacing:.08em; color:var(--terracotta-soft);
+}
+
+/* ---------- bloco de solução ---------- */
+.of-solution-head{ position:relative; }
+.of-solution-head .num{
+  font-family:'Cormorant Garamond', serif;
+  font-size:52px; line-height:1;
+  color:var(--terracotta);
+  opacity:.28;
+  display:block;
+  margin-bottom:6px;
+}
+.of-solution-head .kicker{ margin-bottom:8px; }
+.of-verbs{
+  margin-top:10px;
+  font-size:12.5px; letter-spacing:.05em; font-weight:500;
+  color:var(--terracotta-dark);
+}
+.of-need{
+  font-family:'Cormorant Garamond', serif;
+  font-size:21px; line-height:1.42; color:var(--navy); font-weight:500;
+  max-width:620px;
+}
+.of-desc{ margin-top:16px; max-width:640px; font-size:15.5px; }
+
+/* ---------- lista de serviços ---------- */
+.of-services{
+  list-style:none;
+  margin-top:34px;
+  border-bottom:1px solid var(--line);
+}
+.of-services li{
+  padding:24px 0;
+  border-top:1px solid var(--line);
+}
+.of-services h3{ font-size:21px; line-height:1.2; }
+.of-services .apply{
+  display:block; margin-top:7px;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--terracotta-dark); font-weight:500;
+}
+.of-services p{ margin-top:12px; font-size:15px; max-width:640px; }
+
+/* ---------- faixa chave na mão ---------- */
+.of-band{
+  position:relative;
+  background-size:cover; background-position:center;
+  padding:76px 0; color:var(--cream);
+}
+.of-band::before{
+  content:""; position:absolute; inset:0;
+  background:rgba(13,32,56,.58);
+}
+.of-band .of-wrap{ position:relative; }
+.of-band .kicker{ color:var(--terracotta-soft); }
+.of-band-text{
+  font-family:'Cormorant Garamond', serif;
+  font-size:25px; line-height:1.38; font-weight:500;
+  max-width:660px; color:var(--cream);
+  margin-top:4px;
+}
+
+/* ---------- CTA final ---------- */
+.of-cta{ text-align:left; }
+.of-cta h2{ font-size:30px; max-width:520px; }
+.of-cta .btn{ margin-top:26px; }
+
+/* =========================================================
+   TABLET (≥768px)
+========================================================= */
+@media (min-width:768px){
+  .of-wrap{ padding:0 40px; }
+  .of-sec{ padding:72px 0; }
+  .of-h2{ font-size:36px; }
+
+  .of-hero{ padding:64px 0 44px; }
+  .of-hero h1{ font-size:60px; }
+  .of-hero-lead{ font-size:17px; }
+
+  .of-solution-head .num{ font-size:64px; }
+  .of-need{ font-size:23px; }
+
+  .of-services{
+    display:grid; grid-template-columns:1fr 1fr;
+    column-gap:48px;
+  }
+  /* número ímpar de serviços: o último ocupa a linha toda, para o
+     border-bottom do contentor fechar a lista a toda a largura */
+  .of-services li:last-child:nth-child(odd){ grid-column:1 / -1; }
+
+  .of-band{ padding:96px 0; }
+  .of-band-text{ font-size:30px; }
+
+  .of-cta h2{ font-size:36px; }
+}
+
+/* =========================================================
+   DESKTOP (≥1024px)
+========================================================= */
+@media (min-width:1024px){
+  .of-wrap{ max-width:1160px; margin:0 auto; padding:0 56px; }
+  .of-sec{ padding:96px 0; }
+  .of-h2{ font-size:42px; }
+
+  .of-hero{ padding:84px 0 56px; }
+  .of-hero h1{ font-size:72px; }
+
+  /* cabeçalho da solução à esquerda, serviços à direita */
+  .of-solution{ display:grid; grid-template-columns:.9fr 1.1fr; column-gap:80px; }
+  .of-solution-head{ grid-column:1; }
+  .of-solution .of-services{ grid-column:2; grid-row:1; margin-top:0; }
+  .of-solution .text-link{ grid-column:1; margin-top:28px; }
+
+  .of-solution-head .num{ font-size:76px; }
+  .of-need{ font-size:25px; }
+  .of-desc{ font-size:16px; }
+
+  .of-services{ grid-template-columns:1fr; column-gap:0; }
+  .of-services li{ padding:28px 0; }
+  .of-services li:last-child:nth-child(odd){ grid-column:auto; }
+  .of-services h3{ font-size:23px; }
+  .of-services p{ font-size:15.5px; }
+
+  .of-band{ padding:128px 0; }
+  .of-band-text{ font-size:34px; max-width:760px; }
+
+  .of-cta .of-wrap{ display:flex; justify-content:space-between; align-items:center; gap:64px; }
+  .of-cta .btn{ margin-top:0; flex:0 0 auto; }
+}

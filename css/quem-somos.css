@@ -3,20 +3,8 @@
    Depende de css/style.css (variáveis, nav, botões, footer)
 ========================================================= */
 
-:root{
-  /* tom mais claro do terracota, só para texto pequeno sobre azul-marinho (contraste) */
-  --terracotta-soft:#D9825A;
-}
-
-[id]{ scroll-margin-top:76px; }
-
-/* nav: página actual */
-.menu-panel a[aria-current="page"]{
-  text-decoration:underline;
-  text-decoration-color:var(--terracotta);
-  text-decoration-thickness:1.5px;
-  text-underline-offset:7px;
-}
+/* --terracotta-soft, [id] scroll-margin e a regra de aria-current estão em styles.css
+   (servem a mais de uma página interna). */
 
 /* ---------- estrutura base ---------- */
 .qs-wrap{ padding:0 24px; }
@@ -62,7 +50,7 @@
   font-family:'Cormorant Garamond', serif;
   font-size:23px; line-height:1.42; color:var(--navy); font-weight:500;
 }
-.qs-intro .lead-p + p{ margin-top:18px; }
+.qs-intro p + p{ margin-top:18px; }
 
 .qs-duo{ position:relative; padding-bottom:52px; }
 .qs-duo .big{

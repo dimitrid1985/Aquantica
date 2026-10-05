@@ -12,6 +12,8 @@
   --ink-soft:#5B584F;
   --line:rgba(43,42,40,0.15);
   --line-on-navy:rgba(250,243,231,0.22);
+  /* tom mais claro do terracota, só para texto pequeno sobre azul-marinho (contraste) */
+  --terracotta-soft:#D9825A;
 }
 
 *{box-sizing:border-box; margin:0; padding:0;}
@@ -112,6 +114,8 @@ a{ color:inherit; text-decoration:none; }
 }
 .burger{
   width:26px; height:18px; position:relative; cursor:pointer;
+  display:block; background:none; border:0; padding:0;
+  -webkit-appearance:none; appearance:none;
 }
 .burger i{
   display:block; height:1.5px; width:100%; background:var(--cream);
@@ -138,6 +142,24 @@ a{ color:inherit; text-decoration:none; }
 }
 .menu-cta-wrap{ padding:0 24px 20px; }
 .menu-cta-wrap .btn{ width:100%; justify-content:center; }
+
+/* nav: item da página actual (páginas internas; a home não usa) */
+.menu-panel a[aria-current="page"]{
+  text-decoration:underline;
+  text-decoration-color:var(--terracotta);
+  text-decoration-thickness:1.5px;
+  text-underline-offset:7px;
+}
+
+/* compensa o nav fixo ao saltar para uma âncora */
+[id]{ scroll-margin-top:76px; }
+
+/* foco visível sobre o azul-marinho do nav */
+.nav a:focus-visible,
+.burger:focus-visible{
+  outline:2px solid var(--terracotta);
+  outline-offset:4px;
+}
 
 /* ---------- HERO ---------- */
 .hero{
@@ -568,9 +590,16 @@ footer .fine{
   .contato .btn{ margin-top:26px; }
   .contact-details{ margin-top:0; flex:1; max-width:380px; }
 
-  footer{ display:flex; justify-content:center; }
-  footer .footer-inner{ max-width:1160px; padding:0 56px; }
-  footer .fine{ max-width:1160px; margin-left:auto; margin-right:auto; padding-left:56px; padding-right:56px; box-sizing:border-box; }
+  /* o footer é um bloco: o .fine é uma faixa por baixo, não um item ao lado
+     do menu. Os 56px vivem no próprio footer para a linha do .fine ficar
+     alinhada com o texto, como no mobile. */
+  footer{ padding-left:56px; padding-right:56px; }
+  footer .footer-inner,
+  footer .fine{
+    max-width:1048px;
+    margin-left:auto; margin-right:auto;
+    padding-left:0; padding-right:0;
+  }
 }
 
 /* =========================================================

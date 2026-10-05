@@ -4,29 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aquantica — Home (mobile)</title>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
 <div class="frame">
 
   <!-- NAV -->
-  <div class="nav" id="nav">
-    <a class="word-mark" href="#"><img src="images/logo-aquantica.svg" alt="Aquantica"></a>
-    <div class="burger" id="burgerBtn" role="button" aria-label="Abrir menu" aria-expanded="false">
+  <nav class="nav" id="nav" aria-label="Navegação principal">
+    <a class="word-mark" href="/"><img src="/images/logo-aquantica.svg" alt="Aquantica"></a>
+    <button class="burger" id="burgerBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
       <i></i><i></i><i></i>
-    </div>
+    </button>
     <div class="menu-panel" id="menuPanel">
       <ul>
-        <li><a href="#solucoes">O que fazemos</a></li>
-        <li><a href="quem-somos.html">Quem somos</a></li>
-        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="/o-que-fazemos">O que fazemos</a></li>
+        <li><a href="/quem-somos">Quem somos</a></li>
+        <li><a href="/clientes">Clientes</a></li>
       </ul>
       <div class="menu-cta-wrap">
-        <a class="btn btn-outline-light menu-cta" href="#contato">Fale connosco</a>
+        <a class="btn btn-outline-light menu-cta" href="/#contato">Fale connosco</a>
       </div>
     </div>
-  </div>
+  </nav>
+
+  <main>
 
   <!-- HERO -->
   <section class="hero">
@@ -41,7 +43,7 @@
         </div>
       </div>
       <div class="hero-photo-wrap">
-        <img class="q-mark" src="images/monograma.svg" alt="" aria-hidden="true">
+        <img class="q-mark" src="/images/monograma.svg" alt="" aria-hidden="true">
         <div class="hero-photo"></div>
       </div>
     </div>
@@ -117,12 +119,12 @@
     <div class="rule"></div>
     <p>De mineração a saúde, franquias a corretagem — negócios de portes e sectores distintos confiam na Aquantica.</p>
     <div class="logo-grid">
-      <div class="logo-cell"><img src="images/logos/geosondas.png" alt="Geosondas"></div>
-      <div class="logo-cell"><img src="images/logos/unicanda.png" alt="Unicanda"></div>
-      <div class="logo-cell"><img src="images/logos/sushi-in-box.png" alt="Sushi In Box"></div>
-      <div class="logo-cell"><img src="images/logos/apollices.png" alt="Apollices"></div>
-      <div class="logo-cell"><img src="images/logos/polen.png" alt="Pólen Franchising"></div>
-      <div class="logo-cell"><img src="images/logos/fabricando-sonhos.png" alt="Fabricando Sonhos"></div>
+      <div class="logo-cell"><img src="/images/logos/geosondas.png" alt="Geosondas"></div>
+      <div class="logo-cell"><img src="/images/logos/unicanda.png" alt="Unicanda"></div>
+      <div class="logo-cell"><img src="/images/logos/sushi-in-box.png" alt="Sushi In Box"></div>
+      <div class="logo-cell"><img src="/images/logos/apollices.png" alt="Apollices"></div>
+      <div class="logo-cell"><img src="/images/logos/polen.png" alt="Pólen Franchising"></div>
+      <div class="logo-cell"><img src="/images/logos/fabricando-sonhos.png" alt="Fabricando Sonhos"></div>
     </div>
     <a class="text-link on-cream" href="/clientes">Ver todos os clientes <span class="arrow">→</span></a>
     </div>
@@ -190,17 +192,19 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
     <div>
-    <div class="word-mark"><img src="images/logo-aquantica-with-text.svg" alt="Aquantica — Consultoria empresarial"></div>
+    <div class="word-mark"><img src="/images/logo-aquantica-with-text.svg" alt="Aquantica — Consultoria empresarial"></div>
     </div>
     <ul>
-      <li><a href="#solucoes">O que fazemos</a></li>
-      <li><a href="quem-somos.html">Quem somos</a></li>
-      <li><a href="#clientes">Clientes</a></li>
-      <li><a href="#contato">Fale connosco</a></li>
+      <li><a href="/o-que-fazemos">O que fazemos</a></li>
+      <li><a href="/quem-somos">Quem somos</a></li>
+      <li><a href="/clientes">Clientes</a></li>
+      <li><a href="/#contato">Fale connosco</a></li>
     </ul>
     </div>
     <div class="fine">© Aquantica Consultoria. Luanda, Angola.</div>
