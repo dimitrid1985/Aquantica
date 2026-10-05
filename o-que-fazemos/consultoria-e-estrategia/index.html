@@ -7,6 +7,7 @@
 <meta name="description" content="Estudo de viabilidade, plano de negócio, modelos financeiros, planeamento de novos negócios e plano estratégico.">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/solucao.css">
+<script src="/js/menu.js" defer></script>
 </head>
 <body>
 
@@ -208,18 +209,7 @@
 
 </div>
 
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const panel = document.getElementById('menuPanel');
-  burger.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    panel.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
-</script>
+
 
 </body>
 </html>

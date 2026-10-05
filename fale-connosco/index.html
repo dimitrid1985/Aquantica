@@ -7,6 +7,7 @@
 <meta name="description" content="Conte-nos o momento da sua empresa. E-mail, telefone e morada da Aquantica Consultoria em Luanda.">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/fale-connosco.css">
+<script src="/js/menu.js" defer></script>
 </head>
 <body>
 
@@ -147,18 +148,6 @@
 
 </div>
 
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const panel = document.getElementById('menuPanel');
-  burger.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    panel.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
-</script>
 
 </body>
 </html>

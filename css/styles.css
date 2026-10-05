@@ -228,6 +228,12 @@ a{ color:inherit; text-decoration:none; }
   background:var(--cream);
 }
 .quem-somos p{ margin-top:14px; }
+.quem-somos-text{ margin-top:4px; }
+.quem-somos-text .lead{
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px; line-height:1.42; font-weight:500;
+  color:var(--navy);
+}
 
 /* ---------- FAIXA URBANA ---------- */
 .city-band{
@@ -236,34 +242,8 @@ a{ color:inherit; text-decoration:none; }
   background-position:center;
 }
 
-/* ---------- MANIFESTO STRIP ---------- */
-.manifesto{
-  background:var(--navy);
-  color:var(--cream);
-  padding:52px 24px;
-  position:relative;
-}
-.manifesto .quote-mark{
-  font-family:'Cormorant Garamond', serif;
-  font-size:70px;
-  color:var(--terracotta);
-  line-height:0.5;
-  margin-bottom:6px;
-  display:block;
-}
-.manifesto blockquote{
-  font-family:'Cormorant Garamond', serif;
-  font-size:24px;
-  line-height:1.4;
-  font-weight:500;
-  color:var(--cream);
-}
-.manifesto .attrib{
-  margin-top:18px;
-  font-size:13px;
-  letter-spacing:0.05em;
-  color:rgba(250,243,231,0.6);
-}
+/* A faixa .manifesto deixou de existir: a citação da Érika passou para dentro
+   da seção .equipe, como .equipe-quote. */
 
 /* ---------- SOLUÇÕES ---------- */
 .solucoes{ background:var(--cream); }
@@ -317,12 +297,14 @@ a{ color:inherit; text-decoration:none; }
   object-fit:contain;
 }
 
-/* ---------- DEPOIMENTO ---------- */
+/* ---------- DEPOIMENTOS ---------- */
 .depoimento{
   background:var(--cream-2);
   padding:52px 24px;
 }
-.depoimento .quote-mark{
+.depoimento-grid{ margin-top:26px; display:grid; gap:40px; }
+.depo{ margin:0; display:grid; grid-template-rows:auto 1fr auto; }
+.depo .quote-mark{
   font-family:'Cormorant Garamond', serif;
   font-size:64px;
   color:var(--terracotta);
@@ -330,30 +312,27 @@ a{ color:inherit; text-decoration:none; }
   display:block;
   margin-bottom:14px;
 }
-.depoimento blockquote{
+.depo blockquote{
   font-family:'Cormorant Garamond', serif;
   font-size:19px;
   line-height:1.5;
   color:var(--navy);
   font-style:italic;
 }
-.depoimento .signee{
+.depo .signee{
   margin-top:22px;
   display:flex;
   align-items:center;
   gap:12px;
 }
-.depoimento .avatar{
-  width:44px; height:44px;
-  border-radius:50%;
-  background-size:cover;
-  background-position:center;
-  flex-shrink:0;
+.depo .signee img{
+  width:48px; height:48px; flex:0 0 48px;
+  border-radius:50%; object-fit:cover;
 }
-.depoimento .signee .name{
+.depo .signee .name{
   font-size:14px; font-weight:500; color:var(--navy);
 }
-.depoimento .signee .role{
+.depo .signee .role{
   font-size:12.5px; color:var(--ink-soft);
 }
 
@@ -364,6 +343,25 @@ a{ color:inherit; text-decoration:none; }
   padding:52px 24px;
 }
 .equipe p{ color:rgba(250,243,231,0.68); margin-top:12px; }
+
+/* citação da Érika, antes numa faixa própria */
+.equipe-quote{ margin:0 0 44px; }
+.equipe-quote .quote-mark{
+  font-family:'Cormorant Garamond', serif;
+  font-size:70px;
+  color:var(--terracotta);
+  line-height:0.5;
+  margin-bottom:6px;
+  display:block;
+}
+.equipe-quote blockquote{
+  font-family:'Cormorant Garamond', serif;
+  font-size:24px;
+  line-height:1.4;
+  font-weight:500;
+  color:var(--cream);
+}
+
 .lead-card{
   margin-top:28px;
   display:flex;
@@ -375,7 +373,11 @@ a{ color:inherit; text-decoration:none; }
   background-size:cover; background-position:center top;
   flex-shrink:0;
 }
-.lead-info h3{ color:var(--cream); font-size:20px; }
+.lead-info .name{
+  display:block;
+  font-family:'Cormorant Garamond', serif;
+  color:var(--cream); font-size:20px; font-weight:500;
+}
 .lead-info .role{
   color:var(--terracotta);
   font-size:12.5px;
@@ -488,7 +490,7 @@ footer .fine{
   .menu-cta-wrap{ padding:0; }
   .menu-cta-wrap .btn{ width:auto; padding:10px 20px; }
 
-  .section, .hero, .manifesto, .clientes, .depoimento, .equipe, .contato{
+  .section, .hero, .clientes, .depoimento, .equipe, .contato{
     padding-left:40px; padding-right:40px;
   }
 
@@ -509,11 +511,11 @@ footer .fine{
 
   .city-band{ height:340px; }
 
-  .quem-somos, .manifesto{ text-align:left; }
+  .quem-somos{ text-align:left; }
   .quem-somos h2{ max-width:520px; }
-  .quem-somos p{ max-width:520px; }
+  .quem-somos-text{ max-width:620px; }
 
-  .manifesto blockquote{ max-width:560px; font-size:28px; }
+  .equipe-quote blockquote{ max-width:560px; font-size:28px; }
 
   .solucoes .head{ max-width:560px; }
   .pillar-grid{
@@ -526,7 +528,7 @@ footer .fine{
 
   .logo-grid{ grid-template-columns:repeat(3, 1fr); }
 
-  .depoimento blockquote{ max-width:560px; }
+  .depoimento-grid{ grid-template-columns:1fr 1fr; gap:48px; }
 
   .lead-card{ align-items:center; }
   .lead-photo{ width:120px; height:150px; }
@@ -547,12 +549,12 @@ footer .fine{
 ========================================================= */
 @media (min-width:1024px){
   .nav{ padding:24px 56px; }
-  .section, .manifesto, .clientes, .depoimento, .equipe, .contato{
+  .section, .clientes, .depoimento, .equipe, .contato{
     padding-left:0; padding-right:0;
   }
   .hero{ padding-left:0; padding-right:0; }
 
-  .hero-inner, .quem-somos-inner, .manifesto-inner, .solucoes-inner,
+  .hero-inner, .quem-somos-inner, .solucoes-inner,
   .clientes-inner, .depoimento-inner, .equipe-inner, .contato-inner,
   .footer-inner{
     max-width:1160px;
@@ -569,28 +571,32 @@ footer .fine{
 
   .city-band{ height:380px; }
 
-  .quem-somos{ display:flex; justify-content:center; }
-  .quem-somos h2{ font-size:32px; max-width:640px; }
-  .quem-somos p{ max-width:640px; }
+  /* NÃO voltar a pôr `display:flex; justify-content:center` nestas seções.
+     Isso torna o *-inner um item flex, que encolhe até ao conteúdo em vez de
+     preencher os 1160 — era a causa de cada seção ter uma largura diferente
+     (640, 560, 795, 820…). Os inners já se centram sozinhos com margin:0 auto. */
 
-  .manifesto{ display:flex; justify-content:center; }
-  .manifesto blockquote{ max-width:640px; font-size:30px; }
+  .quem-somos-inner{ display:grid; grid-template-columns:.8fr 1.2fr; gap:64px; }
+  .quem-somos h2{ font-size:32px; }
+  .quem-somos-text .lead{ font-size:22px; }
 
-  .solucoes{ display:flex; justify-content:center; }
   .pillar-grid{ gap:28px; margin-top:40px; }
   .pillar{ padding:32px 26px; }
   .pillar h3{ font-size:23px; }
 
-  .clientes{ display:flex; justify-content:center; }
   .logo-grid{ grid-template-columns:repeat(3, 1fr); gap:20px; margin-top:32px; }
   .logo-cell{ aspect-ratio:1.6; }
 
-  .depoimento{ display:flex; justify-content:center; }
+  .depoimento-grid{ gap:64px; }
+  .depo blockquote{ font-size:21px; }
 
-  .equipe{ display:flex; justify-content:center; }
-  .lead-card{ max-width:640px; }
+  /* a citação (esquerda) é bem mais alta que o texto da equipa (direita);
+     centrar evita um vazio grande por baixo da coluna curta */
+  .equipe-inner{ display:grid; grid-template-columns:1.1fr .9fr; gap:72px; align-items:center; }
+  .equipe-quote{ margin-bottom:0; }
+  .equipe-quote blockquote{ font-size:30px; }
 
-  .contato{ display:flex; justify-content:center; text-align:left; }
+  .contato{ text-align:left; }
   .contato-inner{ display:flex; justify-content:space-between; align-items:flex-start; gap:60px; text-align:left; }
   .contato h2{ margin:0; }
   .contato p{ margin:14px 0 0; }

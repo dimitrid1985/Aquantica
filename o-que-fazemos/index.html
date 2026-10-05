@@ -7,6 +7,8 @@
 <meta name="description" content="Três soluções para estruturar o seu negócio: consultoria e estratégia, gestão de projectos e soluções integradas, e expansão de negócios.">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/o-que-fazemos.css">
+<script src="/js/menu.js" defer></script>
+<script src="/js/filtro-servicos.js" defer></script>
 </head>
 <body>
 
@@ -34,17 +36,35 @@
 
     <!-- HERO DA PÁGINA -->
     <header class="of-hero">
-      <div class="of-wrap">
-        <span class="crumb"><a href="/">Início</a> &nbsp;/&nbsp; O que fazemos</span>
-        <h1>O que fazemos</h1>
-        <p class="of-hero-lead">Três soluções que cobrem o percurso de um negócio: esclarecer o que fazer, executar o que foi definido e crescer a partir daí.</p>
-        <nav class="of-anchors" aria-label="Nesta página">
-          <a href="#consultoria-e-estrategia"><span class="n">01</span> Consultoria e Estratégia</a>
-          <a href="#gestao-de-projectos"><span class="n">02</span> Gestão de Projectos</a>
-          <a href="#expansao"><span class="n">03</span> Expansão</a>
-        </nav>
+      <div class="of-wrap of-hero-inner">
+        <div class="of-hero-text">
+          <span class="crumb"><a href="/">Início</a> &nbsp;/&nbsp; O que fazemos</span>
+          <h1>O que fazemos</h1>
+          <p class="of-hero-lead">Três soluções que cobrem o percurso de um negócio: esclarecer o que fazer, executar o que foi definido e crescer a partir daí.</p>
+          <nav class="of-anchors" aria-label="Nesta página">
+            <a href="#consultoria-e-estrategia"><span class="n">01</span> Consultoria e Estratégia</a>
+            <a href="#gestao-de-projectos"><span class="n">02</span> Gestão de Projectos</a>
+            <a href="#expansao"><span class="n">03</span> Expansão</a>
+          </nav>
+        </div>
+        <div class="of-hero-photo">
+          <img src="/images/hero-luanda-entardecer.jpg" alt="A baía de Luanda e a marginal ao entardecer, vistas do alto">
+        </div>
       </div>
     </header>
+
+    <!-- FILTRO POR MOMENTO DA EMPRESA (escondido sem JavaScript) -->
+    <section class="of-filtro" data-filtro aria-label="Filtrar serviços">
+      <div class="of-wrap of-filtro-inner">
+        <span class="of-filtro-label" id="filtro-label">Momento da empresa</span>
+        <div class="of-filtro-botoes" role="group" aria-labelledby="filtro-label">
+          <button type="button" data-momento="todos" aria-pressed="true">Todos</button>
+          <button type="button" data-momento="novo" aria-pressed="false">Novos negócios</button>
+          <button type="button" data-momento="funcionamento" aria-pressed="false">Empresas em funcionamento</button>
+        </div>
+        <p class="of-filtro-aviso" data-filtro-aviso role="status"></p>
+      </div>
+    </section>
 
     <!-- SOLUÇÃO 01 -->
     <section class="of-sec of-sec--cream" id="consultoria-e-estrategia">
@@ -60,27 +80,27 @@
         </header>
 
         <ol class="of-services">
-          <li>
+          <li data-momento="novo">
             <h3>Estudo de Viabilidade</h3>
             <span class="apply">Novos negócios</span>
             <p>Avaliação preliminar do potencial de probabilidade e rentabilidade de um negócio antes de realizar investimentos significativos.</p>
           </li>
-          <li>
+          <li data-momento="novo funcionamento">
             <h3>Plano de Negócio</h3>
             <span class="apply">Novos negócios e empresas em funcionamento</span>
             <p>Desenvolvimento de um guia estratégico que abrange visão, objectivos, estratégias e estrutura financeira da empresa.</p>
           </li>
-          <li>
+          <li data-momento="novo funcionamento">
             <h3>Modelos Financeiros</h3>
             <span class="apply">Novos negócios e empresas em funcionamento</span>
             <p>Combinação de contabilidade, finanças e análises financeiras para projectar resultados futuros da empresa.</p>
           </li>
-          <li>
+          <li data-momento="novo">
             <h3>Planeamento de Novos Negócios</h3>
             <span class="apply">Novos negócios</span>
             <p>Definição do modelo de negócio, proposta de valor e posicionamento institucional, assegurando alinhamento entre o projecto do cliente e a demanda do mercado.</p>
           </li>
-          <li>
+          <li data-momento="novo funcionamento">
             <h3>Plano Estratégico</h3>
             <span class="apply">Novos negócios e empresas em funcionamento</span>
             <p>Estruturação do futuro da empresa, dividido por eixos de actuação, definidos para um período específico.</p>
@@ -105,12 +125,12 @@
         </header>
 
         <ol class="of-services">
-          <li>
+          <li data-momento="novo funcionamento">
             <h3>Gestão de Projectos Chave na Mão</h3>
             <span class="apply">Novos negócios e empresas em funcionamento</span>
             <p>Planeamento, execução e conclusão de projectos, incluindo estudo de metas, plano de negócios, branding e posicionamento de marca, projecto arquitectónico, obra e desenho organizacional.</p>
           </li>
-          <li>
+          <li data-momento="novo funcionamento">
             <h3>Gestão Estratégica</h3>
             <span class="apply">Novos negócios e empresas em funcionamento</span>
             <p>Promove a reestruturação eficiente dos sectores-chave da empresa. Através de uma análise colaborativa, identificamos e priorizamos indicadores essenciais, alinhando estratégias e implantando métodos para alcançar resultados significativos.</p>
@@ -143,14 +163,14 @@
         </header>
 
         <ol class="of-services">
-          <li>
-            <h3>Modelo Franchising</h3>
-            <span class="apply">Negócios em andamento</span>
+          <li data-momento="funcionamento">
+            <h3>Modelo de Franchising</h3>
+            <span class="apply">Empresas em funcionamento</span>
             <p>Desenvolvimento de um plano para transformar o negócio em uma franquia, incluindo análise de franqueabilidade, plano de negócios, perfil do franqueado, manualização de processos para o franqueado e instrumentos jurídicos.</p>
           </li>
-          <li>
+          <li data-momento="funcionamento">
             <h3>Estratégias de Expansão</h3>
-            <span class="apply">Negócios em andamento</span>
+            <span class="apply">Empresas em funcionamento</span>
             <p>Definição da estratégia e desenvolvimento de um plano para escalar o negócio através de investimento próprio ou de terceiros.</p>
           </li>
         </ol>
@@ -190,18 +210,6 @@
 
 </div>
 
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const panel = document.getElementById('menuPanel');
-  burger.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    panel.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
-</script>
 
 </body>
 </html>

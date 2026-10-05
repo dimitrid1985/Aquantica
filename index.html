@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aquantica — Home (mobile)</title>
 <link rel="stylesheet" href="/css/styles.css">
+<script src="/js/menu.js" defer></script>
 </head>
 <body>
 
@@ -88,28 +89,27 @@
     </div>
   </section>
 
-  <!-- FAIXA URBANA -->
-  <div class="city-band"></div>
-
   <!-- QUEM SOMOS -->
   <section class="section quem-somos" id="quem-somos">
     <div class="quem-somos-inner">
-    <span class="kicker">Quem somos</span>
-    <h2 class="section-title">Uma consultoria que organiza para crescer</h2>
-    <div class="rule"></div>
-    <p>Acreditamos que uma organização bem sucedida nasce de processos definidos, gestão madura e objectivos claros — para negócios novos ou já em funcionamento.</p>
-    <a class="text-link on-cream" href="/quem-somos">Conheça a nossa história <span class="arrow">→</span></a>
+      <div class="quem-somos-head">
+        <span class="kicker">Quem somos</span>
+        <h2 class="section-title">Uma consultoria que organiza para crescer</h2>
+        <div class="rule"></div>
+      </div>
+      <div class="quem-somos-text">
+        <p class="lead">A Aquantica actua no sector de consultoria empresarial estratégica e tem como principal finalidade “organizar para crescer”.</p>
+        <p>Acredita que uma organização bem sucedida é composta por processos definidos, por uma gestão madura e clara dos objectivos.</p>
+        <p>Nossas soluções estão voltadas tanto para novos negócios quanto para empresas em funcionamento.</p>
+        <p>Em 2017, com a finalidade de contribuir com a estruturação, criação, crescimento e expansão de negócios sustentáveis, nasceu a Aquantica Consultoria.</p>
+        <a class="text-link on-cream" href="/quem-somos">Conheça a nossa história <span class="arrow">→</span></a>
+      </div>
     </div>
   </section>
 
-  <!-- MANIFESTO -->
-  <section class="manifesto">
-    <div class="manifesto-inner">
-    <span class="quote-mark">"</span>
-    <blockquote>A organização de um negócio é o ponto estratégico mais importante para impulsionar o crescimento e mantê-lo no alto.</blockquote>
-    <span class="attrib">Érika Gonzaga — Sócia-directora executiva</span>
-    </div>
-  </section>
+
+  <!-- FAIXA URBANA -->
+  <div class="city-band"></div>
 
   <!-- CLIENTES -->
   <section class="clientes" id="clientes">
@@ -130,38 +130,63 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTO -->
+  <!-- DEPOIMENTOS -->
   <section class="depoimento">
     <div class="depoimento-inner">
-    <span class="kicker">O que falam sobre a Aquantica</span>
-    <span class="quote-mark">"</span>
-    <blockquote>Trabalhar com Érika é fácil, reconfortante e inspirador. Contribuiu para a nossa marca com organização e liderança de equipa.</blockquote>
-    <div class="signee">
-      <div class="avatar"></div>
-      <div>
-        <div class="name">Jane Muniz</div>
-        <div class="role">CEO, Franqueador Spa das Sobrancelhas</div>
+      <span class="kicker">O que falam sobre a Aquantica</span>
+
+      <div class="depoimento-grid">
+        <figure class="depo">
+          <span class="quote-mark">“</span>
+          <blockquote>Trabalhar com Érika é fácil, reconfortante, prazeroso e inspirador. Ela é alguém em quem você pode realmente confiar, tanto com seu profissionalismo quanto com seu carisma.</blockquote>
+          <figcaption class="signee">
+            <img src="/images/jane-muniz.jpg" alt="">
+            <div>
+              <div class="name">Jane Muniz</div>
+              <div class="role">CEO Franqueador, Spa das Sobrancelhas</div>
+            </div>
+          </figcaption>
+        </figure>
+
+        <figure class="depo">
+          <span class="quote-mark">“</span>
+          <blockquote>A Aquantica é um parceiro imprescindível para transformar ideias em estrutura, ajudou-me a definir o mapa de serviços e a posicionar o negócio com clareza.</blockquote>
+          <figcaption class="signee">
+            <img src="/images/claudia-pinto.jpg" alt="">
+            <div>
+              <div class="name">Claudia Pinto</div>
+              <div class="role">Fundadora, Clio Themis</div>
+            </div>
+          </figcaption>
+        </figure>
       </div>
-    </div>
-    <a class="text-link on-cream" href="/clientes#depoimentos">Ler mais depoimentos <span class="arrow">→</span></a>
+
+      <a class="text-link on-cream" href="/clientes#depoimentos">Ler mais depoimentos <span class="arrow">→</span></a>
     </div>
   </section>
 
-  <!-- EQUIPE -->
+  <!-- EQUIPA (com a citação da Érika) -->
   <section class="equipe">
     <div class="equipe-inner">
-    <span class="kicker">Quem conduz o trabalho</span>
-    <h2 class="section-title">Uma equipa multidisciplinar</h2>
-    <p>Estratégia, finanças, arquitectura, gestão, pessoas e conteúdo — reunidos para acompanhar o seu negócio de ponta a ponta.</p>
-    <div class="lead-card">
-      <div class="lead-photo"></div>
-      <div class="lead-info">
-        <h3>Érika Gonzaga</h3>
-        <span class="role">Sócia-directora executiva</span>
-        <p>Mais de uma década estruturando negócios no Brasil e em Angola.</p>
+      <figure class="equipe-quote">
+        <span class="quote-mark">“</span>
+        <blockquote>A organização de um negócio é o ponto estratégico mais importante para impulsionar o crescimento e mantê-lo no alto.</blockquote>
+        <figcaption class="lead-card">
+          <div class="lead-photo"></div>
+          <div class="lead-info">
+            <span class="name">Érika Gonzaga</span>
+            <span class="role">Sócia-directora executiva</span>
+            <p>Mais de uma década estruturando negócios no Brasil e em Angola.</p>
+          </div>
+        </figcaption>
+      </figure>
+
+      <div class="equipe-text">
+        <span class="kicker">Quem conduz o trabalho</span>
+        <h2 class="section-title">Uma equipa multidisciplinar</h2>
+        <p>Estratégia, finanças, arquitectura, gestão, pessoas e conteúdo — reunidos para acompanhar o seu negócio de ponta a ponta.</p>
+        <a class="text-link on-navy" href="/quem-somos#equipa">Conheça toda a equipa <span class="arrow">→</span></a>
       </div>
-    </div>
-    <a class="text-link on-navy" href="/quem-somos#equipa">Conheça toda a equipa <span class="arrow">→</span></a>
     </div>
   </section>
 
@@ -186,7 +211,7 @@
       </div>
       <div class="contact-row">
         <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        Av. 4 de Fevereiro, nº 50, Marginal, Luanda
+        Av. 4 de Fevereiro, nº 50, apt 4, Marginal, Luanda
       </div>
     </div>
     </div>
@@ -212,18 +237,6 @@
 
 </div>
 
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const panel = document.getElementById('menuPanel');
-  burger.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    panel.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
-</script>
 
 </body>
 </html>

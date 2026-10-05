@@ -7,6 +7,7 @@
 <meta name="description" content="Marcas de sectores distintos que confiam na Aquantica, e o que dizem sobre o trabalho que fizemos juntos.">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/clientes.css">
+<script src="/js/menu.js" defer></script>
 </head>
 <body>
 
@@ -189,18 +190,6 @@
 
 </div>
 
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const panel = document.getElementById('menuPanel');
-  burger.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    panel.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
-</script>
 
 </body>
 </html>

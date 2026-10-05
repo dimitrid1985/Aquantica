@@ -28,6 +28,12 @@
   margin-top:20px; max-width:520px;
   color:rgba(250,243,231,.72); font-size:15.5px;
 }
+/* no mobile a foto vem depois do texto, como na home */
+.of-hero-photo{ margin-top:34px; }
+.of-hero-photo img{
+  display:block; width:100%;
+  aspect-ratio:16/10; object-fit:cover;
+}
 
 .of-anchors{
   display:flex; gap:10px; margin-top:34px;
@@ -46,6 +52,51 @@
   font-family:'Cormorant Garamond', serif;
   font-size:12px; letter-spacing:.08em; color:var(--terracotta-soft);
 }
+
+/* ---------- filtro por momento da empresa ---------- */
+/* sem JavaScript a barra não aparece: o filtro não funcionaria e a página
+   mostra os 9 serviços na mesma. O JS marca <html class="tem-js">. */
+.of-filtro{ display:none; }
+.tem-js .of-filtro{
+  display:block;
+  background:var(--cream-2);
+  border-bottom:1px solid var(--line);
+  padding:22px 0;
+}
+.of-filtro-label{
+  display:block; margin-bottom:12px;
+  font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-soft); font-weight:500;
+}
+.of-filtro-botoes{ display:flex; flex-wrap:wrap; gap:8px; }
+.of-filtro-botoes button{
+  font-family:'Jost', sans-serif;
+  font-size:13.5px; letter-spacing:.01em;
+  color:var(--navy);
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:2px;
+  padding:11px 16px;
+  cursor:pointer;
+}
+.of-filtro-botoes button:hover{ border-color:var(--terracotta); }
+.of-filtro-botoes button:focus-visible{
+  outline:2px solid var(--terracotta); outline-offset:2px;
+}
+.of-filtro-botoes button[aria-pressed="true"]{
+  background:var(--navy);
+  border-color:var(--navy);
+  color:var(--cream);
+}
+.of-filtro-aviso{
+  margin-top:12px;
+  font-size:12.5px; letter-spacing:.04em; color:var(--ink-soft);
+}
+
+/* elementos que o filtro esconde */
+.of-sec[hidden],
+.of-services li[hidden],
+.of-anchors a[hidden]{ display:none; }
 
 /* ---------- bloco de solução ---------- */
 .of-solution-head{ position:relative; }
@@ -124,6 +175,10 @@
   .of-hero h1{ font-size:60px; }
   .of-hero-lead{ font-size:17px; }
 
+  /* ainda empilhado: em duas colunas a barra de âncoras não caberia na
+     coluna de texto e a terceira âncora ficaria escondida no scroll */
+  .of-hero-photo img{ aspect-ratio:21/9; border-radius:4px; }
+
   .of-solution-head .num{ font-size:64px; }
   .of-need{ font-size:23px; }
 
@@ -132,8 +187,11 @@
     column-gap:48px;
   }
   /* número ímpar de serviços: o último ocupa a linha toda, para o
-     border-bottom do contentor fechar a lista a toda a largura */
-  .of-services li:last-child:nth-child(odd){ grid-column:1 / -1; }
+     border-bottom do contentor fechar a lista a toda a largura.
+     Com o filtro activo quem é "o último" muda, por isso o JS marca
+     .ocupa-linha e desliga esta regra com .is-filtrada. */
+  .of-services:not(.is-filtrada) li:last-child:nth-child(odd){ grid-column:1 / -1; }
+  .of-services li.ocupa-linha{ grid-column:1 / -1; }
 
   .of-band{ padding:96px 0; }
   .of-band-text{ font-size:30px; }
@@ -149,8 +207,19 @@
   .of-sec{ padding:96px 0; }
   .of-h2{ font-size:42px; }
 
-  .of-hero{ padding:84px 0 56px; }
+  .of-hero{ padding:84px 0 64px; }
   .of-hero h1{ font-size:72px; }
+
+  /* texto à esquerda, foto à direita, como na home */
+  .of-hero-inner{
+    display:grid; grid-template-columns:1fr .85fr;
+    gap:64px; align-items:center;
+  }
+  .of-hero-photo{ margin-top:0; }
+  .of-hero-photo img{ aspect-ratio:1/1; }
+  /* na coluna estreita as 3 âncoras nem sempre cabem numa linha: quebram,
+     em vez de ficarem escondidas no scroll horizontal */
+  .of-anchors{ flex-wrap:wrap; overflow:visible; gap:10px; }
 
   /* cabeçalho da solução à esquerda, serviços à direita */
   .of-solution{ display:grid; grid-template-columns:.9fr 1.1fr; column-gap:80px; }
@@ -162,9 +231,11 @@
   .of-need{ font-size:25px; }
   .of-desc{ font-size:16px; }
 
+  /* uma coluna outra vez: nenhum item precisa de ocupar "a linha toda" */
   .of-services{ grid-template-columns:1fr; column-gap:0; }
   .of-services li{ padding:28px 0; }
-  .of-services li:last-child:nth-child(odd){ grid-column:auto; }
+  .of-services li:last-child:nth-child(odd),
+  .of-services li.ocupa-linha{ grid-column:auto; }
   .of-services h3{ font-size:23px; }
   .of-services p{ font-size:15.5px; }
 

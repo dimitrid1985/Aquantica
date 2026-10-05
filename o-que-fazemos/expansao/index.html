@@ -7,6 +7,7 @@
 <meta name="description" content="Modelo de franchising e estratégias de expansão para negócios que querem crescer em escala.">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/solucao.css">
+<script src="/js/menu.js" defer></script>
 </head>
 <body>
 
@@ -52,8 +53,8 @@
           </figure>
           <div class="sol-head">
             <span class="n" aria-hidden="true">01</span>
-            <h2>Modelo Franchising</h2>
-            <span class="apply">Negócios em andamento</span>
+            <h2>Modelo de Franchising</h2>
+            <span class="apply">Empresas em funcionamento</span>
           </div>
           <dl class="sol-detail">
             <div>
@@ -74,7 +75,7 @@
           <div class="sol-head">
             <span class="n" aria-hidden="true">02</span>
             <h2>Estratégias de Expansão</h2>
-            <span class="apply">Negócios em andamento</span>
+            <span class="apply">Empresas em funcionamento</span>
           </div>
           <dl class="sol-detail">
             <div>
@@ -145,18 +146,7 @@
 
 </div>
 
-<script>
-  const burger = document.getElementById('burgerBtn');
-  const panel = document.getElementById('menuPanel');
-  burger.addEventListener('click', () => {
-    const open = panel.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    panel.classList.remove('open');
-    burger.setAttribute('aria-expanded', false);
-  }));
-</script>
+
 
 </body>
 </html>
