@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ÁREA AINDA NÃO PUBLICADA. O noindex sai quando for para o ar.
+     Não pôr Disallow no robots.txt: se o crawler não puder ler a página,
+     também não lê o noindex.
+     TODO O TEXTO DE ARTIGOS É LOREM IPSUM — só a moldura (títulos de secção,
+     botões, categorias, datas) é que é real. -->
+<meta name="robots" content="noindex, nofollow">
+<title>Artigos — Aquantica Consultoria Empresarial</title>
+<meta name="description" content="Estudos e publicações da Aquantica.">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/artigos.css">
+<script src="/js/menu.js" defer></script>
+<script src="/js/filtro-artigos.js" defer></script>
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" aria-label="Navegação principal">
+    <a class="word-mark" href="/"><img src="/images/logo-aquantica.svg" alt="Aquantica"></a>
+    <button class="burger" id="burgerBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
+      <i></i><i></i><i></i>
+    </button>
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li><a href="/o-que-fazemos">O que fazemos</a></li>
+        <li><a href="/quem-somos">Quem somos</a></li>
+        <li><a href="/clientes">Clientes</a></li>
+      </ul>
+      <div class="menu-cta-wrap">
+        <a class="btn btn-outline-light menu-cta" href="/fale-connosco">Fale connosco</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <header class="ar-hero">
+      <div class="ar-wrap ar-hero-inner">
+        <div class="ar-hero-text">
+          <span class="crumb"><a href="/">Início</a> &nbsp;/&nbsp; Artigos</span>
+          <span class="kicker">Estudos e publicações</span>
+          <h1>Artigos</h1>
+          <p class="ar-hero-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="ar-hero-photo">
+          <img src="/images/mesa-projecto.jpg" alt="">
+        </div>
+      </div>
+    </header>
+
+    <!-- DESTAQUE -->
+    <section class="ar-sec ar-sec--cream">
+      <div class="ar-wrap">
+        <span class="kicker">Em destaque</span>
+
+        <article class="ar-destaque">
+          <figure>
+            <img src="/images/band-cadeira.jpg" alt="">
+          </figure>
+          <div>
+            <p class="ar-meta">
+              <span class="ar-cat">Estratégia</span>
+              <time datetime="2026-03-12">12 de março de 2026</time>
+            </p>
+            <h2><a href="/artigos/lorem-ipsum-dolor-sit-amet">Lorem ipsum dolor sit amet consectetur</a></h2>
+            <p class="ar-resumo">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore.</p>
+            <p class="ar-paper-flag"><span aria-hidden="true">↓</span> Inclui a pesquisa completa em PDF</p>
+            <a class="text-link on-cream" href="/artigos/lorem-ipsum-dolor-sit-amet">Ler o artigo <span class="arrow">→</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TODOS -->
+    <section class="ar-sec ar-sec--cream2">
+      <div class="ar-wrap">
+        <span class="kicker">Todos os artigos</span>
+
+        <!-- filtro por categoria: escondido sem JavaScript -->
+        <div class="ar-filtro" data-filtro-artigos aria-label="Filtrar por categoria">
+          <div class="ar-filtro-botoes" role="group" aria-label="Categorias">
+            <button type="button" data-cat="todas" aria-pressed="true">Todas</button>
+            <button type="button" data-cat="estrategia" aria-pressed="false">Estratégia</button>
+            <button type="button" data-cat="gestao" aria-pressed="false">Gestão</button>
+            <button type="button" data-cat="expansao" aria-pressed="false">Expansão</button>
+            <button type="button" data-cat="financas" aria-pressed="false">Finanças</button>
+          </div>
+          <p class="ar-filtro-aviso" data-filtro-aviso role="status"></p>
+        </div>
+
+        <ol class="ar-lista">
+          <li data-cat="estrategia">
+            <p class="ar-meta"><span class="ar-cat">Estratégia</span><time datetime="2026-03-12">12 de março de 2026</time></p>
+            <h3><a href="/artigos/lorem-ipsum-dolor-sit-amet">Lorem ipsum dolor sit amet consectetur</a></h3>
+            <p class="ar-resumo">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+            <p class="ar-paper-flag"><span aria-hidden="true">↓</span> Com pesquisa completa</p>
+          </li>
+          <li data-cat="expansao">
+            <p class="ar-meta"><span class="ar-cat">Expansão</span><time datetime="2026-02-24">24 de fevereiro de 2026</time></p>
+            <h3><a href="#">Sed do eiusmod tempor incididunt</a></h3>
+            <p class="ar-resumo">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+          </li>
+          <li data-cat="gestao">
+            <p class="ar-meta"><span class="ar-cat">Gestão</span><time datetime="2026-02-03">3 de fevereiro de 2026</time></p>
+            <h3><a href="#">Ut enim ad minim veniam quis nostrud</a></h3>
+            <p class="ar-resumo">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur adipisci velit.</p>
+            <p class="ar-paper-flag"><span aria-hidden="true">↓</span> Com pesquisa completa</p>
+          </li>
+          <li data-cat="financas">
+            <p class="ar-meta"><span class="ar-cat">Finanças</span><time datetime="2026-01-15">15 de janeiro de 2026</time></p>
+            <h3><a href="#">Duis aute irure dolor in reprehenderit</a></h3>
+            <p class="ar-resumo">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+          </li>
+          <li data-cat="estrategia">
+            <p class="ar-meta"><span class="ar-cat">Estratégia</span><time datetime="2025-12-09">9 de dezembro de 2025</time></p>
+            <h3><a href="#">Excepteur sint occaecat cupidatat</a></h3>
+            <p class="ar-resumo">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae.</p>
+          </li>
+          <li data-cat="gestao">
+            <p class="ar-meta"><span class="ar-cat">Gestão</span><time datetime="2025-11-18">18 de novembro de 2025</time></p>
+            <h3><a href="#">At vero eos et accusamus et iusto odio</a></h3>
+            <p class="ar-resumo">Et harum quidem rerum facilis est et expedita distinctio, nam libero tempore cum soluta nobis.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+    <div>
+    <div class="word-mark"><img src="/images/logo-aquantica-with-text.svg" alt="Aquantica — Consultoria empresarial"></div>
+    </div>
+    <ul>
+      <li><a href="/o-que-fazemos">O que fazemos</a></li>
+      <li><a href="/quem-somos">Quem somos</a></li>
+      <li><a href="/clientes">Clientes</a></li>
+      <li><a href="/fale-connosco">Fale connosco</a></li>
+    </ul>
+    </div>
+    <div class="fine">© Aquantica Consultoria. Luanda, Angola.</div>
+  </footer>
+
+</div>
+
+</body>
+</html>

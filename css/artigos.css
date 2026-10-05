@@ -1,0 +1,301 @@
+/* =========================================================
+   ARTIGOS — listagem (/artigos) e artigo (/artigos/<slug>)
+   Prefixo ar-. Um ficheiro para os dois moldes, como em solucao.css.
+   Depende de css/styles.css.
+========================================================= */
+
+/* ---------- estrutura base ---------- */
+.ar-wrap{ padding:0 24px; }
+.ar-sec{ padding:56px 0; }
+.ar-sec--cream{ background:var(--cream); }
+.ar-sec--cream2{ background:var(--cream-2); }
+.ar-sec--navy{ background:var(--navy); color:var(--cream); }
+.ar-sec--navy .kicker{ color:var(--terracotta-soft); }
+.ar-h2{ font-size:26px; line-height:1.16; }
+.ar-sec--navy .ar-h2{ color:var(--cream); }
+
+/* ---------- hero ---------- */
+.ar-hero{
+  background:var(--navy);
+  padding:48px 0 40px;
+}
+.ar-hero .kicker{ color:var(--terracotta-soft); }
+.ar-hero h1{ font-size:46px; line-height:1.06; color:var(--cream); }
+.ar-hero-lead{
+  margin-top:20px; max-width:560px;
+  color:rgba(250,243,231,.72); font-size:15.5px;
+}
+/* no mobile a foto vem depois do texto, como nos outros heros */
+.ar-hero-photo{ margin-top:34px; }
+.ar-hero-photo img{
+  display:block; width:100%;
+  aspect-ratio:3/2; object-fit:cover;
+}
+
+.ar-hero--artigo h1{ font-size:38px; line-height:1.14; max-width:18ch; }
+
+/* imagem de destaque do artigo: a seguir ao cabeçalho, de margem a margem.
+   Altura fixa como nas faixas da home — com proporção fixa ficaria alta
+   demais em ecrã largo e empurrava o CTA da pesquisa para fora da vista. */
+.ar-figura{ margin:0; }
+.ar-figura img{
+  display:block; width:100%; height:240px;
+  object-fit:cover;
+}
+.ar-standfirst{
+  margin-top:22px; max-width:620px;
+  font-family:'Cormorant Garamond', serif;
+  font-size:21px; line-height:1.44; font-weight:500;
+  color:rgba(250,243,231,.85);
+}
+
+/* ---------- meta (categoria + data) ---------- */
+.ar-meta{
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:0 12px;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-soft); margin-bottom:12px;
+}
+.ar-cat{ color:var(--terracotta-dark); font-weight:500; }
+.ar-meta--hero{ color:rgba(250,243,231,.6); margin-bottom:16px; }
+.ar-meta--hero .ar-cat{ color:var(--terracotta-soft); }
+
+/* ---------- destaque ---------- */
+.ar-destaque{ margin-top:26px; }
+.ar-destaque figure{ margin:0 0 24px; }
+.ar-destaque figure img{
+  display:block; width:100%;
+  aspect-ratio:16/10; object-fit:cover;
+}
+.ar-destaque h2{ font-size:32px; line-height:1.14; }
+.ar-destaque h2 a{ color:var(--navy); }
+.ar-resumo{ margin-top:14px; max-width:620px; font-size:15.5px; }
+
+/* etiqueta de artigo com pesquisa associada */
+.ar-paper-flag{
+  margin-top:14px;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--terracotta-dark); font-weight:500;
+}
+
+/* ---------- filtro de categorias ---------- */
+.ar-filtro{ display:none; }
+.tem-js .ar-filtro{ display:block; margin-top:24px; }
+.ar-filtro-botoes{ display:flex; flex-wrap:wrap; gap:8px; }
+.ar-filtro-botoes button{
+  font-family:'Jost', sans-serif;
+  font-size:13.5px;
+  color:var(--navy);
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:2px;
+  padding:10px 15px;
+  cursor:pointer;
+}
+.ar-filtro-botoes button[aria-pressed="true"]{
+  background:var(--navy); border-color:var(--navy); color:var(--cream);
+}
+.ar-filtro-aviso{
+  margin-top:12px;
+  font-size:12.5px; letter-spacing:.04em; color:var(--ink-soft);
+}
+@media (hover: hover){
+  .ar-filtro-botoes button:hover{ border-color:var(--terracotta); }
+  .ar-filtro-botoes button[aria-pressed="true"]:hover{
+    background:var(--navy-2); border-color:var(--navy-2);
+  }
+}
+
+/* ---------- lista de artigos ---------- */
+.ar-lista{
+  list-style:none; margin-top:30px;
+  border-bottom:1px solid var(--line);
+}
+.ar-lista li{ padding:26px 0; border-top:1px solid var(--line); }
+.ar-lista li[hidden]{ display:none; }
+.ar-lista h3{ font-size:23px; line-height:1.2; }
+.ar-lista h3 a{ color:var(--navy); }
+.ar-lista .ar-resumo{ margin-top:10px; font-size:15px; }
+.ar-lista .ar-paper-flag{ margin-top:10px; }
+
+/* ---------- chamada para o paper ---------- */
+.ar-paper{ background:var(--blush); padding:40px 0; }
+.ar-paper h2{ font-size:25px; line-height:1.2; margin-top:4px; }
+.ar-paper p{ margin-top:12px; max-width:560px; color:var(--ink); font-size:15px; }
+.ar-paper-ficha{
+  margin-top:10px;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.ar-paper .btn{ margin-top:24px; }
+
+/* ---------- corpo do artigo ---------- */
+.ar-body{ max-width:660px; }
+.ar-body p{ font-size:16.5px; line-height:1.7; }
+/* um parágrafo ganha margem venha ele depois do que vier, senão cola-se
+   ao último item de uma lista ou ao fim de uma citação */
+.ar-body p + p,
+.ar-body ul + p,
+.ar-body ol + p,
+.ar-body blockquote + p{ margin-top:18px; }
+.ar-body h2{
+  font-size:28px; line-height:1.2;
+  margin-top:44px; padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.ar-body h3{ font-size:21px; line-height:1.25; margin-top:32px; }
+.ar-body h2 + p, .ar-body h3 + p{ margin-top:14px; }
+.ar-body ul, .ar-body ol{ margin-top:18px; padding-left:0; list-style:none; }
+.ar-body li{
+  position:relative; padding-left:28px;
+  font-size:16.5px; line-height:1.7; color:var(--ink-soft);
+}
+.ar-body li + li{ margin-top:10px; }
+.ar-body ul li::before{
+  content:"—"; position:absolute; left:0; color:var(--terracotta);
+}
+.ar-body ol{ counter-reset:ar; }
+.ar-body ol li{ counter-increment:ar; }
+.ar-body ol li::before{
+  content:counter(ar, decimal-leading-zero);
+  position:absolute; left:0;
+  font-family:'Cormorant Garamond', serif;
+  font-size:14px; color:var(--terracotta-dark);
+}
+.ar-body blockquote{
+  margin:34px 0; padding-left:24px;
+  border-left:2px solid var(--terracotta);
+}
+.ar-body blockquote p{
+  font-family:'Cormorant Garamond', serif;
+  font-size:23px; line-height:1.4; font-weight:500; color:var(--navy);
+}
+.ar-body blockquote cite{
+  display:block; margin-top:12px;
+  font-style:normal; font-size:12.5px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--ink-soft);
+}
+.ar-body a{
+  color:var(--navy); font-weight:500;
+  text-decoration:underline; text-decoration-color:var(--terracotta);
+  text-underline-offset:3px;
+}
+
+/* ---------- outros artigos ---------- */
+.ar-outros{ list-style:none; margin-top:24px; }
+.ar-outros li{ border-top:1px solid var(--line-on-navy); }
+.ar-outros li:last-child{ border-bottom:1px solid var(--line-on-navy); }
+.ar-outros a{
+  display:grid; grid-template-columns:1fr auto; gap:4px 14px;
+  padding:18px 0; color:var(--cream);
+}
+.ar-outros .ar-cat{
+  grid-column:1; color:var(--terracotta-soft);
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+}
+.ar-outros .name{
+  grid-column:1;
+  font-family:'Cormorant Garamond', serif; font-size:21px; line-height:1.2;
+}
+.ar-outros .arrow{
+  grid-column:2; grid-row:1 / span 2;
+  align-self:center; color:var(--terracotta-soft);
+  transition:transform .18s ease;
+}
+@media (hover: hover){
+  .ar-outros a:hover .name{ color:var(--terracotta-soft); }
+  .ar-outros a:hover .arrow{ transform:translateX(4px); }
+}
+@media (prefers-reduced-motion: reduce){
+  .ar-outros .arrow{ transition:none; }
+  .ar-outros a:hover .arrow{ transform:none; }
+}
+
+/* ---------- CTA final ---------- */
+.ar-cta{ text-align:left; }
+.ar-cta h2{ font-size:30px; max-width:520px; }
+.ar-cta .btn{ margin-top:26px; }
+
+/* =========================================================
+   TABLET (≥768px)
+========================================================= */
+@media (min-width:768px){
+  .ar-wrap{ padding:0 40px; }
+  .ar-sec{ padding:72px 0; }
+  .ar-h2{ font-size:30px; }
+
+  .ar-hero{ padding:64px 0 48px; }
+  .ar-hero h1{ font-size:60px; }
+  .ar-hero-lead{ font-size:17px; }
+  .ar-hero--artigo h1{ font-size:48px; }
+  .ar-standfirst{ font-size:23px; }
+
+  /* ainda empilhado a 768: o hero da listagem respira melhor com a foto larga */
+  .ar-hero-photo img{ aspect-ratio:21/9; }
+  .ar-figura img{ height:340px; }
+
+  .ar-destaque{ display:grid; grid-template-columns:1fr 1fr; gap:36px; align-items:center; }
+  .ar-destaque figure{ margin:0; }
+  .ar-destaque figure img{ aspect-ratio:4/5; }
+  .ar-destaque h2{ font-size:36px; }
+
+  .ar-paper{ padding:52px 0; }
+  .ar-paper-inner{
+    display:grid; grid-template-columns:1fr auto;
+    gap:32px; align-items:center;
+  }
+  .ar-paper .btn{ margin-top:0; }
+
+  .ar-body p, .ar-body li{ font-size:17px; }
+
+  .ar-cta h2{ font-size:36px; }
+}
+
+/* =========================================================
+   DESKTOP (≥1024px)
+========================================================= */
+@media (min-width:1024px){
+  .ar-wrap{ max-width:1160px; margin:0 auto; padding:0 56px; }
+  .ar-sec{ padding:96px 0; }
+  .ar-h2{ font-size:34px; }
+
+  .ar-hero{ padding:84px 0 64px; }
+  .ar-hero h1{ font-size:72px; }
+  .ar-hero--artigo h1{ font-size:56px; }
+  .ar-standfirst{ font-size:25px; }
+
+  /* texto à esquerda, foto à direita, como no hero de O que fazemos */
+  .ar-hero-inner{
+    display:grid; grid-template-columns:1fr .85fr;
+    gap:64px; align-items:center;
+  }
+  .ar-hero-photo{ margin-top:0; }
+  .ar-hero-photo img{ aspect-ratio:3/2; }
+  .ar-figura img{ height:420px; }
+
+  /* 4/5 aqui deixaria a foto muito mais alta que o bloco de texto ao lado */
+  .ar-destaque{ margin-top:32px; grid-template-columns:1fr 1.05fr; gap:64px; }
+  .ar-destaque figure img{ aspect-ratio:1/1; }
+  .ar-destaque h2{ font-size:42px; }
+
+  /* lista em duas colunas: são textos curtos, ficam legíveis */
+  .ar-lista{
+    display:grid; grid-template-columns:1fr 1fr;
+    column-gap:64px;
+  }
+  .ar-lista li{ padding:30px 0; }
+
+  .ar-paper{ padding:64px 0; }
+  .ar-paper h2{ font-size:30px; }
+
+  .ar-body{ max-width:680px; }
+  .ar-body h2{ font-size:32px; margin-top:52px; }
+
+  .ar-outros{
+    display:grid; grid-template-columns:1fr 1fr; column-gap:48px;
+  }
+  .ar-outros li,
+  .ar-outros li:last-child{ border-bottom:1px solid var(--line-on-navy); }
+
+  .ar-cta .ar-wrap{ display:flex; justify-content:space-between; align-items:center; gap:64px; }
+  .ar-cta .btn{ margin-top:0; flex:0 0 auto; }
+}
