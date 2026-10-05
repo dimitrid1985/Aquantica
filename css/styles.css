@@ -151,6 +151,13 @@ a{ color:inherit; text-decoration:none; }
   text-underline-offset:7px;
 }
 
+/* no CTA, "página actual" é a moldura terracota — o sublinhado dentro
+   de um botão já com borda fica confuso */
+.menu-panel .menu-cta[aria-current="page"]{
+  text-decoration:none;
+  border-color:var(--terracotta);
+}
+
 /* compensa o nav fixo ao saltar para uma âncora */
 [id]{ scroll-margin-top:76px; }
 

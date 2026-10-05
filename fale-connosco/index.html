@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fale connosco — Aquantica Consultoria Empresarial</title>
+<meta name="description" content="Conte-nos o momento da sua empresa. E-mail, telefone e morada da Aquantica Consultoria em Luanda.">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/fale-connosco.css">
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- NAV -->
+  <nav class="nav" id="nav" aria-label="Navegação principal">
+    <a class="word-mark" href="/"><img src="/images/logo-aquantica.svg" alt="Aquantica"></a>
+    <button class="burger" id="burgerBtn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPanel">
+      <i></i><i></i><i></i>
+    </button>
+    <div class="menu-panel" id="menuPanel">
+      <ul>
+        <li><a href="/o-que-fazemos">O que fazemos</a></li>
+        <li><a href="/quem-somos">Quem somos</a></li>
+        <li><a href="/clientes">Clientes</a></li>
+      </ul>
+      <div class="menu-cta-wrap">
+        <a class="btn btn-outline-light menu-cta" href="/fale-connosco" aria-current="page">Fale connosco</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO DA PÁGINA -->
+    <header class="ct-hero">
+      <div class="ct-wrap">
+        <span class="crumb"><a href="/">Início</a> &nbsp;/&nbsp; Fale connosco</span>
+        <h1>Fale connosco</h1>
+        <p class="ct-hero-lead">Conte-nos o momento da sua empresa e encontramos, juntos, o caminho certo.</p>
+      </div>
+    </header>
+
+    <!-- FORMULÁRIO + DADOS -->
+    <section class="ct-sec">
+      <div class="ct-wrap ct-grid">
+
+        <!-- TODO antes de publicar: definir o destino do formulário.
+             O mailto: abaixo é provisório — abre o cliente de e-mail do
+             visitante em vez de enviar pelo site. Ver pendências no CLAUDE.md. -->
+        <form class="ct-form" method="post" enctype="text/plain"
+              action="mailto:atendimento@aquanticaconsultoria.com">
+          <h2 class="ct-h2">Escreva-nos</h2>
+
+          <div class="ct-field">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required>
+          </div>
+
+          <div class="ct-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+
+          <div class="ct-field">
+            <label for="telefone">Telefone <span class="opt">(opcional)</span></label>
+            <input type="tel" id="telefone" name="telefone" autocomplete="tel">
+          </div>
+
+          <div class="ct-field">
+            <label for="empresa">Empresa <span class="opt">(opcional)</span></label>
+            <input type="text" id="empresa" name="empresa" autocomplete="organization">
+          </div>
+
+          <div class="ct-field">
+            <label for="momento">Momento da empresa</label>
+            <select id="momento" name="momento">
+              <option value="">Escolha uma opção</option>
+              <option>Novo negócio, ainda por abrir</option>
+              <option>Empresa em funcionamento</option>
+              <option>Empresa em expansão</option>
+              <option>Outro</option>
+            </select>
+          </div>
+
+          <div class="ct-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Enviar mensagem</button>
+        </form>
+
+        <aside class="ct-details">
+          <h2 class="ct-h2">Onde nos encontrar</h2>
+
+          <ul class="ct-list">
+            <li>
+              <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
+              <span>
+                <span class="lbl">E-mail</span>
+                <a href="mailto:atendimento@aquanticaconsultoria.com">atendimento@aquanticaconsultoria.com</a>
+              </span>
+            </li>
+            <li>
+              <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
+              <span>
+                <span class="lbl">Telefone</span>
+                <a href="tel:+244940461782">+244 940 461 782</a>
+              </span>
+            </li>
+            <li>
+              <span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span>
+                <span class="lbl">Morada</span>
+                Av. 4 de Fevereiro, nº 50, apt 4, Marginal<br>Luanda, Angola
+              </span>
+            </li>
+          </ul>
+
+          <div class="ct-note">
+            <span class="kicker">Antes de escrever</span>
+            <p>Se já sabe o que procura, veja <a class="text-link-inline" href="/o-que-fazemos">as nossas três soluções</a>. Ajuda-nos a chegar mais depressa ao essencial.</p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+    <div>
+    <div class="word-mark"><img src="/images/logo-aquantica-with-text.svg" alt="Aquantica — Consultoria empresarial"></div>
+    </div>
+    <ul>
+      <li><a href="/o-que-fazemos">O que fazemos</a></li>
+      <li><a href="/quem-somos">Quem somos</a></li>
+      <li><a href="/clientes">Clientes</a></li>
+      <li><a href="/fale-connosco">Fale connosco</a></li>
+    </ul>
+    </div>
+    <div class="fine">© Aquantica Consultoria. Luanda, Angola.</div>
+  </footer>
+
+</div>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const panel = document.getElementById('menuPanel');
+  burger.addEventListener('click', () => {
+    const open = panel.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    panel.classList.remove('open');
+    burger.setAttribute('aria-expanded', false);
+  }));
+</script>
+
+</body>
+</html>

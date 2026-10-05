@@ -1,0 +1,183 @@
+/* =========================================================
+   CLIENTES — estilos específicos da página
+   Depende de css/styles.css (variáveis, tipografia, nav, botões, footer)
+========================================================= */
+
+/* ---------- estrutura base ---------- */
+.cl-wrap{ padding:0 24px; }
+.cl-sec{ padding:56px 0; }
+.cl-sec--cream{ background:var(--cream); }
+.cl-sec--cream2{ background:var(--cream-2); }
+.cl-sec--navy{ background:var(--navy); color:var(--cream); }
+.cl-sec--navy .kicker{ color:var(--terracotta-soft); }
+
+.cl-h2{ font-size:30px; line-height:1.14; }
+.cl-sec--navy .cl-h2{ color:var(--cream); }
+
+/* ---------- hero ---------- */
+.cl-hero{
+  background:var(--navy);
+  padding:48px 0 40px;
+}
+.cl-hero .crumb{
+  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
+  margin-bottom:22px; display:block;
+}
+.cl-hero .crumb a{ color:rgba(250,243,231,.8); }
+.cl-hero h1{ font-size:46px; line-height:1.04; color:var(--cream); }
+.cl-hero-lead{
+  margin-top:20px; max-width:560px;
+  color:rgba(250,243,231,.72); font-size:15.5px;
+}
+
+/* ---------- sectores ---------- */
+.cl-sectors{
+  list-style:none; margin-top:26px;
+  display:flex; flex-wrap:wrap; gap:6px 0;
+}
+.cl-sectors li{
+  font-family:'Cormorant Garamond', serif;
+  font-size:22px; color:var(--navy);
+}
+/* separador no ::after do item anterior: ao mudar de linha ele fica no fim
+   da linha de cima, em vez de abrir a seguinte com um ponto órfão */
+.cl-sectors li:not(:last-child)::after{
+  content:"·";
+  color:var(--terracotta);
+  margin:0 12px;
+}
+
+/* ---------- logos ---------- */
+.cl-logos{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:12px;
+}
+.cl-logo{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  aspect-ratio:1.5;
+  display:flex; align-items:center; justify-content:center;
+}
+.cl-logo img{ max-width:56%; max-height:100%; object-fit:contain; }
+
+.cl-more-title{
+  margin-top:44px;
+  font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  font-family:'Jost', sans-serif; font-weight:500;
+  color:var(--terracotta-dark);
+}
+.cl-more{
+  list-style:none; margin-top:14px;
+  border-bottom:1px solid var(--line);
+}
+.cl-more li{
+  font-family:'Cormorant Garamond', serif;
+  font-size:20px; color:var(--navy);
+  padding:15px 0; border-top:1px solid var(--line);
+}
+
+/* ---------- depoimentos ---------- */
+.cl-quotes{ margin-top:36px; }
+.cl-quote{ margin:0; }
+.cl-quote + .cl-quote{
+  margin-top:44px; padding-top:44px;
+  border-top:1px solid var(--line-on-navy);
+}
+.cl-quote .qmark{
+  font-family:'Cormorant Garamond', serif;
+  font-size:64px; line-height:.5; color:var(--terracotta-soft);
+  display:block; margin-bottom:16px;
+}
+.cl-quote blockquote p{
+  font-family:'Cormorant Garamond', serif;
+  font-size:21px; line-height:1.44; color:var(--cream);
+}
+.cl-quote blockquote p + p{ margin-top:16px; }
+
+.cl-quote figcaption{
+  margin-top:26px;
+  display:flex; align-items:center; gap:14px;
+}
+.cl-quote figcaption img{
+  width:56px; height:56px; flex:0 0 56px;
+  border-radius:50%; object-fit:cover;
+}
+.cl-quote .name{
+  display:block; font-size:14.5px; font-weight:500; color:var(--cream);
+}
+.cl-quote .role{
+  display:block; font-size:12.5px; margin-top:3px; line-height:1.4;
+  color:rgba(250,243,231,.66);
+}
+
+/* ---------- CTA final ---------- */
+.cl-cta{ text-align:left; }
+.cl-cta h2{ font-size:30px; max-width:520px; }
+.cl-cta .btn{ margin-top:26px; }
+
+/* =========================================================
+   TABLET (≥768px)
+========================================================= */
+@media (min-width:768px){
+  .cl-wrap{ padding:0 40px; }
+  .cl-sec{ padding:72px 0; }
+  .cl-h2{ font-size:36px; }
+
+  .cl-hero{ padding:64px 0 48px; }
+  .cl-hero h1{ font-size:60px; }
+  .cl-hero-lead{ font-size:17px; }
+
+  .cl-sectors li{ font-size:26px; }
+
+  .cl-logos{ grid-template-columns:repeat(3, 1fr); gap:16px; }
+  .cl-more{ display:grid; grid-template-columns:1fr 1fr; column-gap:48px; border-bottom:none; }
+  .cl-more li:nth-last-child(-n+2){ border-bottom:1px solid var(--line); }
+
+  .cl-quotes{ margin-top:44px; }
+  .cl-quote blockquote p{ font-size:22px; }
+  .cl-quote blockquote{ max-width:720px; }
+
+  .cl-cta h2{ font-size:36px; }
+}
+
+/* =========================================================
+   DESKTOP (≥1024px)
+========================================================= */
+@media (min-width:1024px){
+  .cl-wrap{ max-width:1160px; margin:0 auto; padding:0 56px; }
+  .cl-sec{ padding:96px 0; }
+  .cl-h2{ font-size:42px; }
+
+  .cl-hero{ padding:84px 0 64px; }
+  .cl-hero h1{ font-size:72px; }
+
+  .cl-sectors li{ font-size:30px; }
+
+  .cl-logos{ grid-template-columns:repeat(3, 1fr); gap:20px; margin-top:40px; }
+  .cl-logo{ aspect-ratio:1.6; }
+  .cl-more{ grid-template-columns:repeat(3, 1fr); column-gap:48px; }
+  .cl-more li:nth-last-child(-n+2){ border-bottom:none; }
+  .cl-more li:nth-last-child(-n+3){ border-bottom:1px solid var(--line); }
+
+  /* 2×2: com 4 depoimentos, três colunas deixariam um órfão na 2.ª linha */
+  .cl-quotes{
+    display:grid; grid-template-columns:repeat(2, 1fr);
+    gap:56px 72px; margin-top:52px;
+  }
+  /* lado a lado: os três começam igual, todos com a linha em cima.
+     Inclui o selector adjacente para anular a regra do empilhado. */
+  .cl-quote,
+  .cl-quote + .cl-quote{
+    display:grid; grid-template-rows:auto 1fr auto;
+    margin-top:0; padding-top:32px;
+    border-top:1px solid var(--line-on-navy);
+  }
+  .cl-quote blockquote p{ font-size:19px; line-height:1.5; }
+  .cl-quote .qmark{ font-size:56px; }
+
+  .cl-cta .cl-wrap{ display:flex; justify-content:space-between; align-items:center; gap:64px; }
+  .cl-cta .btn{ margin-top:0; flex:0 0 auto; }
+}

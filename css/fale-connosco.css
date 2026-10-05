@@ -1,0 +1,135 @@
+/* =========================================================
+   FALE CONNOSCO — estilos específicos da página
+   Depende de css/styles.css (variáveis, tipografia, nav, botões, footer)
+========================================================= */
+
+/* ---------- estrutura base ---------- */
+.ct-wrap{ padding:0 24px; }
+.ct-sec{ padding:56px 0; background:var(--cream); }
+.ct-h2{ font-size:26px; line-height:1.16; }
+
+/* ---------- hero ---------- */
+.ct-hero{
+  background:var(--navy);
+  padding:48px 0 40px;
+}
+.ct-hero .crumb{
+  font-size:12px; letter-spacing:.12em; color:rgba(250,243,231,.6);
+  margin-bottom:22px; display:block;
+}
+.ct-hero .crumb a{ color:rgba(250,243,231,.8); }
+.ct-hero h1{ font-size:46px; line-height:1.04; color:var(--cream); }
+.ct-hero-lead{
+  margin-top:20px; max-width:520px;
+  color:rgba(250,243,231,.72); font-size:15.5px;
+}
+
+/* ---------- formulário ---------- */
+.ct-field{ margin-top:22px; }
+.ct-field label{
+  display:block; margin-bottom:7px;
+  font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ink-soft); font-weight:500;
+}
+.ct-field .opt{ text-transform:none; letter-spacing:.02em; opacity:.7; }
+
+.ct-field input,
+.ct-field select,
+.ct-field textarea{
+  width:100%;
+  font-family:'Jost', sans-serif;
+  font-size:15px;
+  color:var(--ink);
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:2px;
+  padding:13px 14px;
+}
+.ct-field textarea{ resize:vertical; min-height:120px; line-height:1.6; }
+.ct-field select{
+  appearance:none; -webkit-appearance:none;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235B584F' stroke-width='1.8'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+  background-size:18px;
+  padding-right:40px;
+}
+.ct-field input:focus,
+.ct-field select:focus,
+.ct-field textarea:focus{
+  outline:2px solid var(--terracotta);
+  outline-offset:1px;
+  border-color:transparent;
+}
+.ct-form .btn{ margin-top:28px; }
+
+/* ---------- dados de contacto ---------- */
+.ct-details{ margin-top:56px; }
+.ct-list{ list-style:none; margin-top:22px; border-bottom:1px solid var(--line); }
+.ct-list li{
+  display:flex; align-items:flex-start; gap:14px;
+  padding:18px 0; border-top:1px solid var(--line);
+  font-size:14.5px; line-height:1.6; color:var(--ink);
+}
+.ct-list .lbl{
+  display:block; margin-bottom:3px;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-soft); font-weight:500;
+}
+.ct-list a{ color:var(--ink); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px; }
+.ct-list a:hover{ text-decoration-color:var(--terracotta); }
+.ct-list .ic{
+  width:34px; height:34px; flex-shrink:0;
+  background:var(--terracotta);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--cream);
+}
+.ct-list .ic svg{
+  width:17px; height:17px; display:block;
+  fill:none; stroke:currentColor; stroke-width:1.8;
+  stroke-linecap:round; stroke-linejoin:round;
+}
+
+.ct-note{
+  margin-top:36px; padding:24px;
+  background:var(--blush); border-radius:16px;
+}
+.ct-note p{ color:var(--ink); font-size:14.5px; }
+.text-link-inline{
+  color:var(--navy); font-weight:500;
+  text-decoration:underline; text-decoration-color:var(--terracotta);
+  text-underline-offset:3px;
+}
+
+/* =========================================================
+   TABLET (≥768px)
+========================================================= */
+@media (min-width:768px){
+  .ct-wrap{ padding:0 40px; }
+  .ct-sec{ padding:72px 0; }
+  .ct-h2{ font-size:30px; }
+
+  .ct-hero{ padding:64px 0 48px; }
+  .ct-hero h1{ font-size:60px; }
+  .ct-hero-lead{ font-size:17px; }
+
+  .ct-grid{ display:grid; grid-template-columns:1.15fr .85fr; column-gap:56px; align-items:start; }
+  .ct-details{ margin-top:0; }
+}
+
+/* =========================================================
+   DESKTOP (≥1024px)
+========================================================= */
+@media (min-width:1024px){
+  .ct-wrap{ max-width:1160px; margin:0 auto; padding:0 56px; }
+  .ct-sec{ padding:96px 0; }
+  .ct-h2{ font-size:34px; }
+
+  .ct-hero{ padding:84px 0 64px; }
+  .ct-hero h1{ font-size:72px; }
+
+  .ct-grid{ grid-template-columns:1.2fr .8fr; column-gap:88px; }
+  .ct-field{ margin-top:26px; }
+  .ct-list li{ padding:20px 0; font-size:15px; }
+}
